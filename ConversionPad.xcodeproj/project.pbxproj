@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D038E0D2128AC2100BED9D4 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E0C2128AC2100BED9D4 /* DistanceViewController.swift */; };
+		0D038E0F2128AC7B00BED9D4 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E0E2128AC7B00BED9D4 /* TemperatureViewController.swift */; };
+		0D038E112128AC9300BED9D4 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E102128AC9300BED9D4 /* WeightViewController.swift */; };
+		0D038E132128AC9E00BED9D4 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E122128AC9E00BED9D4 /* SpeedViewController.swift */; };
+		0D038E152128ACAB00BED9D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E142128ACAB00BED9D4 /* Constants.swift */; };
+		0D038E172128ACBF00BED9D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E162128ACBF00BED9D4 /* Extensions.swift */; };
 		0D32E0222128A9CB0050FBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32E0212128A9CB0050FBEC /* AppDelegate.swift */; };
-		0D32E0242128A9CB0050FBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32E0232128A9CB0050FBEC /* ViewController.swift */; };
 		0D32E0272128A9CB0050FBEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D32E0252128A9CB0050FBEC /* Main.storyboard */; };
 		0D32E0292128A9CE0050FBEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D32E0282128A9CE0050FBEC /* Assets.xcassets */; };
 		0D32E02C2128A9CE0050FBEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D32E02A2128A9CE0050FBEC /* LaunchScreen.storyboard */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D038E0C2128AC2100BED9D4 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
+		0D038E0E2128AC7B00BED9D4 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		0D038E102128AC9300BED9D4 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		0D038E122128AC9E00BED9D4 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
+		0D038E142128ACAB00BED9D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0D038E162128ACBF00BED9D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0D32E01E2128A9CB0050FBEC /* ConversionPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConversionPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D32E0212128A9CB0050FBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D32E0232128A9CB0050FBEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D32E0262128A9CB0050FBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D32E0282128A9CE0050FBEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D32E02B2128A9CE0050FBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +107,12 @@
 		0D32E0202128A9CB0050FBEC /* ConversionPad */ = {
 			isa = PBXGroup;
 			children = (
+				0D32E0532128AB940050FBEC /* Configuration */,
+				0D32E0522128AB880050FBEC /* Speed */,
+				0D32E0512128AB7B0050FBEC /* Weight */,
+				0D32E0502128AB720050FBEC /* Temperature */,
+				0D32E04F2128AB5B0050FBEC /* Distance */,
 				0D32E0212128A9CB0050FBEC /* AppDelegate.swift */,
-				0D32E0232128A9CB0050FBEC /* ViewController.swift */,
 				0D32E0252128A9CB0050FBEC /* Main.storyboard */,
 				0D32E0282128A9CE0050FBEC /* Assets.xcassets */,
 				0D32E02A2128A9CE0050FBEC /* LaunchScreen.storyboard */,
@@ -123,6 +137,47 @@
 				0D32E0432128A9CE0050FBEC /* Info.plist */,
 			);
 			path = ConversionPadUITests;
+			sourceTree = "<group>";
+		};
+		0D32E04F2128AB5B0050FBEC /* Distance */ = {
+			isa = PBXGroup;
+			children = (
+				0D038E0C2128AC2100BED9D4 /* DistanceViewController.swift */,
+			);
+			path = Distance;
+			sourceTree = "<group>";
+		};
+		0D32E0502128AB720050FBEC /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				0D038E0E2128AC7B00BED9D4 /* TemperatureViewController.swift */,
+			);
+			path = Temperature;
+			sourceTree = "<group>";
+		};
+		0D32E0512128AB7B0050FBEC /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				0D038E102128AC9300BED9D4 /* WeightViewController.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		0D32E0522128AB880050FBEC /* Speed */ = {
+			isa = PBXGroup;
+			children = (
+				0D038E122128AC9E00BED9D4 /* SpeedViewController.swift */,
+			);
+			path = Speed;
+			sourceTree = "<group>";
+		};
+		0D32E0532128AB940050FBEC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0D038E142128ACAB00BED9D4 /* Constants.swift */,
+				0D038E162128ACBF00BED9D4 /* Extensions.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D32E0242128A9CB0050FBEC /* ViewController.swift in Sources */,
+				0D038E112128AC9300BED9D4 /* WeightViewController.swift in Sources */,
+				0D038E132128AC9E00BED9D4 /* SpeedViewController.swift in Sources */,
 				0D32E0222128A9CB0050FBEC /* AppDelegate.swift in Sources */,
+				0D038E0D2128AC2100BED9D4 /* DistanceViewController.swift in Sources */,
+				0D038E0F2128AC7B00BED9D4 /* TemperatureViewController.swift in Sources */,
+				0D038E152128ACAB00BED9D4 /* Constants.swift in Sources */,
+				0D038E172128ACBF00BED9D4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
