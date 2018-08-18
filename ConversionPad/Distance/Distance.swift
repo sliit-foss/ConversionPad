@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum Distance: Int {
+    case inch = 0, centimeter, foot, meter, mile, yard, kilometer
+}
+
