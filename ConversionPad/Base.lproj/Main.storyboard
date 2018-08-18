@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XqG-ha-X7y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Speed-->
         <scene sceneID="wdO-ym-tt5">
             <objects>
                 <viewController id="QRe-Ri-1Cg" sceneMemberID="viewController">
@@ -20,13 +20,13 @@
                         <color key="backgroundColor" red="1" green="0.61512010335259015" blue="0.32405540924419118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hAR-YN-uqn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="psB-sL-9Uy"/>
+                    <tabBarItem key="tabBarItem" title="Speed" image="Temperature" id="psB-sL-9Uy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsq-8e-AOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1716" y="620"/>
         </scene>
-        <!--Item-->
+        <!--Weight-->
         <scene sceneID="EiK-yd-V1D">
             <objects>
                 <viewController id="TBx-yO-4P8" sceneMemberID="viewController">
@@ -36,13 +36,13 @@
                         <color key="backgroundColor" red="0.69713260769999996" green="0.90831444299999997" blue="0.26879074469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bDR-L1-uPD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2pM-pa-Eev"/>
+                    <tabBarItem key="tabBarItem" title="Weight" image="Weight" id="2pM-pa-Eev"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiE-gJ-sYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-788" y="618"/>
         </scene>
-        <!--Item 2-->
+        <!--Distance-->
         <scene sceneID="UNL-Rh-NsX">
             <objects>
                 <viewController id="Ikh-H0-kl3" sceneMemberID="viewController">
@@ -52,13 +52,13 @@
                         <color key="backgroundColor" red="0.3259098742" green="0.77809704059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qtu-BX-qlV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Nn7-Qq-c3c"/>
+                    <tabBarItem key="tabBarItem" title="Distance" image="Distance" id="Nn7-Qq-c3c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOo-gH-EQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="619"/>
         </scene>
-        <!--Item 1-->
+        <!--Temperature-->
         <scene sceneID="R5x-Ij-tu3">
             <objects>
                 <viewController id="7X9-te-Q3I" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" red="1" green="0.78286454329999999" blue="0.08693865529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="c5K-iW-gYE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="A46-Dp-mTm"/>
+                    <tabBarItem key="tabBarItem" title="Temperature" image="Temperature" id="A46-Dp-mTm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fl-DC-aeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="7X9-te-Q3I" kind="relationship" relationship="viewControllers" id="Mfi-tD-2GS"/>
@@ -95,4 +96,9 @@
             <point key="canvasLocation" x="-442" y="-385"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Distance" width="25" height="25"/>
+        <image name="Temperature" width="25" height="25"/>
+        <image name="Weight" width="25" height="25"/>
+    </resources>
 </document>
