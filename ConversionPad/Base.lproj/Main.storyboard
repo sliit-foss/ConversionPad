@@ -115,6 +115,12 @@
                         <viewLayoutGuide key="safeArea" id="qtu-BX-qlV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Distance" image="Distance" id="Nn7-Qq-c3c"/>
+                    <connections>
+                        <outlet property="distancePicker" destination="xif-XN-Vzw" id="Wcs-f6-mzT"/>
+                        <outlet property="lblInputUnit" destination="j9S-Gi-BZn" id="fR9-5C-Ymr"/>
+                        <outlet property="lblInputValue" destination="ol3-uh-5hH" id="4ER-zo-xZE"/>
+                        <outlet property="lblOutputValue" destination="9uJ-zK-RcB" id="zCY-N4-0wA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOo-gH-EQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
