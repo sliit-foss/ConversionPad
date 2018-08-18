@@ -1,5 +1,5 @@
 //
-//  TemperatureViewController.swift
+//  ConversionPadMainViewController.swift
 //  ConversionPad
 //
 //  Created by Dinushanka Nayomal on 8/19/18.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TemperatureViewController: UIViewController {
+class ConversionPadMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
     }
+
 }

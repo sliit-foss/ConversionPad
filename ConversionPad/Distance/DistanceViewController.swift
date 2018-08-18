@@ -21,7 +21,33 @@ class DistanceViewController: UIViewController {
         super.viewDidLoad()
         distancePicker.dataSource = self
         distancePicker.delegate = self
+        convertDistances()
         self.hideKeyboardWhenTappedAround()
+    }
+    
+    
+    @IBAction func didChangeTextValue(_ sender: Any) {
+        convertDistances()
+    }
+    
+    func convertDistances() {
+        let fromUnitIdx = distancePicker.selectedRow(inComponent: 0)
+        let toUnitIdx = distancePicker.selectedRow(inComponent: 1)
+        
+        let fromUnit = Distance.fromString(distances[fromUnitIdx])!
+        let toUnit = Distance.fromString(distances[(distances.count-1) - Int(toUnitIdx)])!
+        
+        if let inputText = lblInputValue.text {
+            if !inputText.isEmpty && (Double(inputText) != nil) {
+                let inputNum = Double(inputText)
+                let outputNum = fromUnit.convertTo(distance: toUnit, value: inputNum!)
+                lblOutputValue.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
+                lblInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+            } else {
+                lblOutputValue.text = " ".appending("...")
+                
+            }
+        }
     }
 }
 
@@ -34,5 +60,27 @@ extension DistanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return distances.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return distances[row]
+    }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        convertDistances()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        switch component {
+        case 0:
+            pickerLabel.text = distances[row]
+            break
+        case 1:
+            pickerLabel.text = distances[(distances.count-1)-row]
+        default:
+            pickerLabel.text = ""
+        }
+        
+        pickerLabel.textAlignment = NSTextAlignment.center
+        return pickerLabel
+    }
 }
