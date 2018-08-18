@@ -13,7 +13,7 @@
         <!--Speed-->
         <scene sceneID="wdO-ym-tt5">
             <objects>
-                <viewController id="QRe-Ri-1Cg" sceneMemberID="viewController">
+                <viewController id="QRe-Ri-1Cg" customClass="SpeedViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQM-1D-hX3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
         <!--Weight-->
         <scene sceneID="EiK-yd-V1D">
             <objects>
-                <viewController id="TBx-yO-4P8" sceneMemberID="viewController">
+                <viewController id="TBx-yO-4P8" customClass="WeightViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTA-H8-0jc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,11 +45,73 @@
         <!--Distance-->
         <scene sceneID="UNL-Rh-NsX">
             <objects>
-                <viewController id="Ikh-H0-kl3" sceneMemberID="viewController">
+                <viewController id="Ikh-H0-kl3" customClass="DistanceViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aHW-DF-w3h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iML-f7-dfO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-lf-29b">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-ww-yHn">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-Zd-Q96">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.3259098742" green="0.77809704059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9S-Gi-BZn">
+                                                        <rect key="frame" x="0.0" y="20.5" width="375" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-uh-5hH">
+                                                        <rect key="frame" x="0.0" y="56.5" width="375" height="93"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3G-6A-Iu4">
+                                                <rect key="frame" x="0.0" y="149.5" width="375" height="149.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-zK-RcB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                                        <color key="backgroundColor" red="0.45826595841505335" green="0.70619254699778944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV6-r8-Y6k">
+                                        <rect key="frame" x="0.0" y="299" width="375" height="299"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xif-XN-Vzw">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                                <color key="backgroundColor" red="0.69713260769999996" green="0.90831444299999997" blue="0.26879074469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.3259098742" green="0.77809704059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iML-f7-dfO" firstAttribute="leading" secondItem="qtu-BX-qlV" secondAttribute="leading" id="9A6-ih-emb"/>
+                            <constraint firstItem="iML-f7-dfO" firstAttribute="top" secondItem="qtu-BX-qlV" secondAttribute="top" id="D4Z-jS-5L1"/>
+                            <constraint firstItem="qtu-BX-qlV" firstAttribute="bottom" secondItem="iML-f7-dfO" secondAttribute="bottom" id="iMm-zw-ZIe"/>
+                            <constraint firstItem="qtu-BX-qlV" firstAttribute="trailing" secondItem="iML-f7-dfO" secondAttribute="trailing" id="qg4-Yf-5GW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qtu-BX-qlV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Distance" image="Distance" id="Nn7-Qq-c3c"/>
@@ -61,7 +123,7 @@
         <!--Temperature-->
         <scene sceneID="R5x-Ij-tu3">
             <objects>
-                <viewController id="7X9-te-Q3I" sceneMemberID="viewController">
+                <viewController id="7X9-te-Q3I" customClass="TemperatureViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LmO-hW-J7D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,8 +143,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0z5-xc-Wrw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="7X9-te-Q3I" kind="relationship" relationship="viewControllers" id="Mfi-tD-2GS"/>
