@@ -20,7 +20,7 @@ git clone https://github.com/rama41222/ConversionPad.git
 
 <img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/distance.png" width="400">
 <img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/speed.png" width="400">
-<img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/temp.png" width="400">
+<img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/temp1.png" width="400">
 <img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/weight.png" width="400">
 
 # Web
