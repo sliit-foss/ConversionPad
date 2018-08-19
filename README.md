@@ -24,4 +24,4 @@ git clone https://github.com/rama41222/ConversionPad.git
 <img src="https://s3.amazonaws.com/rama-private-files/ConversionPad/weight.png" width="400">
 
 # Web
-[More](Dinushanka.me)
+[More](https://www.dinushanka.me)
