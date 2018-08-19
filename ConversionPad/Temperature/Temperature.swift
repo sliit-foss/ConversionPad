@@ -20,7 +20,7 @@ enum Temperature: Int {
             } else if to == .kelvin {
                 return celciusToKelvin(val)
             }  else {
-                return 0.0
+                return val
             }
 
         case .fahrenheit:
@@ -29,7 +29,7 @@ enum Temperature: Int {
             } else if to == .kelvin {
                 return farenhietToKelvin(val)
             }  else {
-                return 0.0
+                return val
             }
             
         case .kelvin:
@@ -38,7 +38,7 @@ enum Temperature: Int {
             } else if to == .fahrenheit {
                 return kelvinToFarenhiet(val)
             }  else {
-                return 0.0
+                return val
             }
         }
     }
@@ -77,26 +77,26 @@ enum Temperature: Int {
     }
     
     func celciusToFarenhiet(_ celcius: Double) -> Double {
-        return 0.0
+        return (celcius * 9/5) + 32
     }
     
     func celciusToKelvin(_ celcius: Double) -> Double {
-        return 0.0
+        return celcius + 273.15
     }
     
     func farenhietToCelcius(_ farenhiet: Double) -> Double {
-        return 0.0
+        return (farenhiet - 32) * 5/9
     }
     
     func farenhietToKelvin(_ farenhiet: Double) -> Double {
-        return 0.0
+        return (farenhiet - 32) * 5/9 + 273.15
     }
     
     func kelvinToCelcius(_ kelvin: Double) -> Double {
-        return 0.0
+        return kelvin - 273.15
     }
     
     func kelvinToFarenhiet(_ kelvin: Double) -> Double {
-        return 0.0
+        return (kelvin - 273.15) * 9/5 + 32
     }
 }
