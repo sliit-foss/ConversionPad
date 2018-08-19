@@ -9,23 +9,23 @@
 import Foundation
 
 enum Temperature: Int {
-    case celcius = 0, fahrenheit, kelvin
+    case celsius = 0, fahrenheit, kelvin
     
     func convertTo(temperature to: Temperature, value val: Double) -> Double {
         
         switch self {
-        case .celcius:
+        case .celsius:
             if to == .fahrenheit {
-                return celciusToFarenhiet(val)
+                return celsiusToFarenhiet(val)
             } else if to == .kelvin {
-                return celciusToKelvin(val)
+                return celsiusToKelvin(val)
             }  else {
                 return val
             }
 
         case .fahrenheit:
-            if to == .celcius {
-                return farenhietToCelcius(val)
+            if to == .celsius {
+                return farenhietToCelsius(val)
             } else if to == .kelvin {
                 return farenhietToKelvin(val)
             }  else {
@@ -33,8 +33,8 @@ enum Temperature: Int {
             }
             
         case .kelvin:
-            if to == .celcius {
-                return kelvinToCelcius(val)
+            if to == .celsius {
+                return kelvinToCelsius(val)
             } else if to == .fahrenheit {
                 return kelvinToFarenhiet(val)
             }  else {
@@ -44,8 +44,8 @@ enum Temperature: Int {
     }
     
     static func fromString(_ string: String) -> Temperature? {
-        if string == "celcius" {
-            return .celcius
+        if string == "celsius" {
+            return .celsius
         } else if string == "fahrenheit" {
             return .fahrenheit
         } else if string == "kelvin" {
@@ -57,8 +57,8 @@ enum Temperature: Int {
     
     func stringValue() -> String {
         switch self {
-        case .celcius:
-            return "celcius"
+        case .celsius:
+            return "celsius"
         case .fahrenheit:
             return "fahrenheit"
         case .kelvin:
@@ -76,15 +76,15 @@ enum Temperature: Int {
         return list
     }
     
-    func celciusToFarenhiet(_ celcius: Double) -> Double {
+    func celsiusToFarenhiet(_ celcius: Double) -> Double {
         return (celcius * 9/5) + 32
     }
     
-    func celciusToKelvin(_ celcius: Double) -> Double {
+    func celsiusToKelvin(_ celcius: Double) -> Double {
         return celcius + 273.15
     }
     
-    func farenhietToCelcius(_ farenhiet: Double) -> Double {
+    func farenhietToCelsius(_ farenhiet: Double) -> Double {
         return (farenhiet - 32) * 5/9
     }
     
@@ -92,7 +92,7 @@ enum Temperature: Int {
         return (farenhiet - 32) * 5/9 + 273.15
     }
     
-    func kelvinToCelcius(_ kelvin: Double) -> Double {
+    func kelvinToCelsius(_ kelvin: Double) -> Double {
         return kelvin - 273.15
     }
     
