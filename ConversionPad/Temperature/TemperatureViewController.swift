@@ -10,6 +10,11 @@ import UIKit
 
 class TemperatureViewController: UIViewController {
 
+    @IBOutlet weak var lblTemperatureInputUnit: UILabel!
+    @IBOutlet weak var lblTemperatureInput: UITextField!
+    @IBOutlet weak var lblTemperatureOutput: UILabel!
+    @IBOutlet weak var temperaturePicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()

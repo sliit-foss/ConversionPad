@@ -10,6 +10,11 @@ import UIKit
 
 class WeightViewController: UIViewController {
 
+    @IBOutlet weak var lblWeightInputUnit: UILabel!
+    @IBOutlet weak var lblWeightInput: UITextField!
+    @IBOutlet weak var lblWeightOutput: UILabel!
+    @IBOutlet weak var weighPicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()

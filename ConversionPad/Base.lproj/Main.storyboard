@@ -39,13 +39,14 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-Ox-cCv">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-Ox-cCv">
                                                         <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <action selector="didChangeTextValue:" destination="Ikh-H0-kl3" eventType="editingChanged" id="Nhg-KK-riM"/>
+                                                            <action selector="speedChanged:" destination="QRe-Ri-1Cg" eventType="editingChanged" id="pSD-ds-NDq"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -53,7 +54,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfg-Xe-2if">
                                                 <rect key="frame" x="0.0" y="125" width="320" height="124.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bF-TS-bIJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6bF-TS-bIJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
                                                         <color key="backgroundColor" red="1" green="0.55020839850000003" blue="0.41279479689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -86,6 +87,12 @@
                         <viewLayoutGuide key="safeArea" id="hAR-YN-uqn"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Speed" image="Temperature" id="psB-sL-9Uy"/>
+                    <connections>
+                        <outlet property="lblSpeedInput" destination="2n3-Ox-cCv" id="QS8-d5-Cvf"/>
+                        <outlet property="lblSpeedInputUnit" destination="l5S-iJ-amj" id="mhc-tS-EAf"/>
+                        <outlet property="lblSpeedOutput" destination="6bF-TS-bIJ" id="yQ6-VR-hGW"/>
+                        <outlet property="speedPicker" destination="pVk-yU-LMN" id="Lmu-dO-VOv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsq-8e-AOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,6 +174,12 @@
                         <viewLayoutGuide key="safeArea" id="bDR-L1-uPD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weight" image="Weight" id="2pM-pa-Eev"/>
+                    <connections>
+                        <outlet property="lblWeightInput" destination="ZAd-b7-mNw" id="ErY-dY-Ku6"/>
+                        <outlet property="lblWeightInputUnit" destination="Peu-lG-TF1" id="xuw-Pw-amo"/>
+                        <outlet property="lblWeightOutput" destination="pdA-HB-RCd" id="zZB-Tf-2IK"/>
+                        <outlet property="weighPicker" destination="3Ll-Tv-s2a" id="Hez-Gk-1St"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiE-gJ-sYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,7 +214,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-uh-5hH">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-uh-5hH">
                                                         <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -335,6 +348,12 @@
                         <viewLayoutGuide key="safeArea" id="c5K-iW-gYE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temperature" image="Temperature" id="A46-Dp-mTm"/>
+                    <connections>
+                        <outlet property="lblTemperatureInput" destination="Os4-0B-ccU" id="rIA-vj-47z"/>
+                        <outlet property="lblTemperatureInputUnit" destination="EzZ-RP-w6q" id="iad-0T-Ii0"/>
+                        <outlet property="lblTemperatureOutput" destination="2n4-sW-mGM" id="qBJ-ID-YFQ"/>
+                        <outlet property="temperaturePicker" destination="UAG-Vo-l5q" id="BpP-OW-isu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fl-DC-aeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
