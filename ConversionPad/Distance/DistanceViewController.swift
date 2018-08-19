@@ -36,13 +36,14 @@ class DistanceViewController: UIViewController {
         
         let fromUnit = Distance.fromString(distances[fromUnitIdx])!
         let toUnit = Distance.fromString(distances[(distances.count-1) - Int(toUnitIdx)])!
+        lblInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
         
         if let inputText = lblInputValue.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
                 let inputNum = Double(inputText)
                 let outputNum = fromUnit.convertTo(distance: toUnit, value: inputNum!)
                 lblOutputValue.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
-                lblInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+                
             } else {
                 lblOutputValue.text = " ".appending("...")
                 

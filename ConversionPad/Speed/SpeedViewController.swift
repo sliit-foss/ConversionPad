@@ -35,13 +35,14 @@ class SpeedViewController: UIViewController {
         
         let fromUnit = Speed.fromString(speeds[fromUnitIdx])!
         let toUnit = Speed.fromString(speeds[(speeds.count-1) - Int(toUnitIdx)])!
+        lblSpeedInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
         
         if let inputText = lblSpeedInput.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
                 let inputNum = Double(inputText)
                 let outputNum = fromUnit.convertTo(speed: toUnit, value: inputNum!)
                 lblSpeedOutput.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
-                lblSpeedInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+            
             } else {
                 lblSpeedOutput.text = " ".appending("...")
                 
