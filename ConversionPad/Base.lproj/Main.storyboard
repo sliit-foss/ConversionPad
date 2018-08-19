@@ -86,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hAR-YN-uqn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Speed" image="Temperature" id="psB-sL-9Uy"/>
+                    <tabBarItem key="tabBarItem" title="Speed" image="Speed" id="psB-sL-9Uy"/>
                     <connections>
                         <outlet property="lblSpeedInput" destination="2n3-Ox-cCv" id="QS8-d5-Cvf"/>
                         <outlet property="lblSpeedInputUnit" destination="l5S-iJ-amj" id="mhc-tS-EAf"/>
@@ -383,6 +383,7 @@
     </scenes>
     <resources>
         <image name="Distance" width="25" height="25"/>
+        <image name="Speed" width="25" height="25"/>
         <image name="Temperature" width="25" height="25"/>
         <image name="Weight" width="25" height="25"/>
     </resources>
