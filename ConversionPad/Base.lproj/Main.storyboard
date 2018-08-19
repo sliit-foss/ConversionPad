@@ -134,6 +134,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <action selector="didChangeTextValue:" destination="Ikh-H0-kl3" eventType="editingChanged" id="ATl-Sm-aSW"/>
+                                                            <action selector="weightChanged:" destination="TBx-yO-4P8" eventType="editingChanged" id="9dV-o8-DqQ"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
