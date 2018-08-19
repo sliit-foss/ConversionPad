@@ -113,7 +113,6 @@ enum Weight: Int {
             return "ounce"
         case .ton:
             return "ton"
-            
         }
     }
     
