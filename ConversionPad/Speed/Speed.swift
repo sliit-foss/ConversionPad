@@ -9,7 +9,7 @@
 import Foundation
 
 enum Speed: Int {
-    case mps = 0, ftps, kmph, mph, knot
+    case mps = 0, ftps, kmph, mph, knot, mach
     
     func convertTo(speed to: Speed, value val: Double) -> Double {
         var constant = 1.0
@@ -25,6 +25,8 @@ enum Speed: Int {
                 constant = 2.23694
             } else if to == .knot {
                 constant = 1.94384
+            } else if to == .mach
+                constant = 0.0030184123
             } else {
                 constant = 1
             }
@@ -38,6 +40,8 @@ enum Speed: Int {
                 constant = 0.681818
             } else if to == .knot {
                 constant = 0.592484
+            } else if to == .mach
+                constant = 0.00092001207
             } else {
                 constant = 1
             }
@@ -51,6 +55,8 @@ enum Speed: Int {
                 constant = 0.621371
             } else if to == .knot {
                 constant = 0.539957
+            } else if to == .mach
+                constant = 0.00083844787
             } else {
                 constant = 1
             }
@@ -62,8 +68,8 @@ enum Speed: Int {
                 constant = 1.46667
             } else if to == .kmph {
                 constant = 1.60934
-            } else if to == .knot {
-                constant = 0.868976
+            } else if to == .mach
+                constant = 0.0013493510
             } else {
                 constant = 1
             }
@@ -77,6 +83,23 @@ enum Speed: Int {
                 constant = 1.852
             } else if to == .mph {
                 constant = 1.15078
+            } else if to == .mach
+                constant = 0.0015528054
+            } else {
+                constant = 1
+            }
+            break
+        case .mach:
+            if to == .mps {
+                constant = 331.3
+            } else if to == .ftps {
+                constant = 1086.9423
+            } else if to == .kmph {
+                constant = 1192.68
+            } else if to == .mph {
+                constant = 741.09699
+            } else if to == .knot
+                constant = 643.99568
             } else {
                 constant = 1
             }
@@ -103,6 +126,8 @@ enum Speed: Int {
     
     func stringValue() -> String {
         switch self {
+        case .mach
+            return "mach"
         case .knot:
             return "knot"
         case .mps:
