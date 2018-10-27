@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum Speed: Int {
-    case mps = 0, ftps, kmph, mph, knot
+enum Speed {
+    case mps, ftps, kmph, mph, knot
     
     func convertTo(speed to: Speed, value val: Double) -> Double {
         var constant = 1.0
@@ -86,15 +86,15 @@ enum Speed: Int {
     }
     
     static func fromString(_ string: String) -> Speed? {
-        if string == "knot" {
+        if string == Constants.knot {
             return .knot
-        } else if string == "meters per second" {
+        } else if string == Constants.mps {
             return .mps
-        } else if string == "feet per second" {
+        } else if string == Constants.ftps {
             return .ftps
-        } else if string == "miles per hour" {
+        } else if string == Constants.mph {
             return .mph
-        } else if string == "kilometers per hour" {
+        } else if string == Constants.kmph {
             return .kmph
         } else {
             return nil
@@ -104,15 +104,15 @@ enum Speed: Int {
     func stringValue() -> String {
         switch self {
         case .knot:
-            return "knot"
+            return Constants.knot
         case .mps:
-            return "meters per second"
+            return Constants.mps
         case .ftps:
-            return "feet per second"
+            return Constants.ftps
         case .mph:
-            return "miles per hour"
+            return Constants.mph
         case .kmph:
-            return "kilometers per hour"
+            return Constants.kmph
     
         }
     }
@@ -120,7 +120,7 @@ enum Speed: Int {
     static func toList() -> [String] {
         var i = 0
         var list = [String]()
-        while let speed = Speed(rawValue: i) {
+        while let speed = Speed.iter {
             list.append(speed.stringValue())
             i = i + 1
         }
