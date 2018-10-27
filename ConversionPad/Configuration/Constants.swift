@@ -58,6 +58,44 @@ enum SpeedConst {
   }
 }
 
+enum WeightConst {
+    enum gram {
+        static let togram = 1
+        static let tokilogram = 0.001
+        static let topound = 0.00220462
+        static let toounce = 0.035274
+        static let toton = 1.0000010787e-6
+    }
+    enum kilogram {
+        static let togram = 1000.0
+        static let tokilogram = 1
+        static let topound = 2.20462
+        static let toounce = 35.274
+        static let toton = 0.001
+    }
+    enum pound {
+        static let togram = 453.592
+        static let tokilogram = 0.453592
+        static let topound = 1.0
+        static let toounce = 16.0
+        static let toton = 0.000453592
+    }
+    enum ounce {
+        static let togram = 28.3495
+        static let tokilogram = 0.0283495
+        static let topound = 0.0625
+        static let toounce = 1
+        static let toton = 2.835e-5
+    }
+    enum ton {
+        static let togram = 1e+6
+        static let tokilogram = 1000.0
+        static let topound = 2204.62
+        static let toounce = 35274.0
+        static let toton = 1
+    }
+}
+
 enum FrequencyConst {
  enum hz {
   static let hz = 1.0
