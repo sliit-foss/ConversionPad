@@ -9,7 +9,7 @@
 import Foundation
 
 enum Distance: Int {
-    case inch = 0, centimeter, foot, meter, mile, yard, kilometer
+    case inch = 0, centimeter, foot, meter, mile, yard, kilometer, millimeter, micrometer, nanometer
     
     func convertTo(distance to: Distance, value val: Double) -> Double {
         var constant = 1.0
@@ -30,6 +30,12 @@ enum Distance: Int {
                 constant = 0.0277778
             } else if to == .kilometer {
                 constant = 2.540002032e-5
+            } else if to == .millimeter {
+                constant = 25.4
+            } else if to == .micrometer {
+                constant = 25400
+            } else if to == .nanometer {
+                constant = 2.54e+7
             }
             break
             
@@ -47,6 +53,12 @@ enum Distance: Int {
                 constant = 0.0109361
             } else if to == .kilometer {
                 constant = 1e-5
+            } else if to == .millimeter {
+                constant = 10
+            } else if to == .micrometer {
+                constant = 10000
+            } else if to == .nanometer {
+                constant = 1e+7
             }
             break
             
@@ -63,7 +75,14 @@ enum Distance: Int {
                 constant = 0.333333
             } else if to == .kilometer {
                 constant = 0.0003048
+            } else if to == .millimeter {
+                constant = 304.8
+            } else if to == .micrometer {
+                constant = 304800
+            } else if to == .nanometer {
+                constant = 3.048e+8
             }
+            
             break
         case .meter:
             if to == .inch {
@@ -78,6 +97,12 @@ enum Distance: Int {
                 constant = 1.09361
             } else if to == .kilometer {
                 constant = 0.001
+            } else if to == .millimeter {
+                constant = 1000
+            } else if to == .micrometer {
+                constant = 1e+6
+            } else if to == .nanometer {
+                constant = 1e+9
             }
             break
         case .mile:
@@ -94,6 +119,12 @@ enum Distance: Int {
                 constant = 1760
             } else if to == .kilometer {
                 constant = 1.60934
+            } else if to == .millimeter {
+                constant = 1.609e+6
+            } else if to == .micrometer {
+                constant = 1608999999.98412
+            } else if to == .nanometer {
+                constant = 1608999999984.1196289
             }
             break
         case .yard:
@@ -109,6 +140,12 @@ enum Distance: Int {
                 constant = 0.000568182
             } else if to == .kilometer {
                 constant = 0.000914400292608
+            } else if to == .millimeter {
+                constant = 914.4
+            } else if to == .micrometer {
+                constant = 914400
+            } else if to == .nanometer {
+                constant = 9.144e+8
             }
             break
             
@@ -125,6 +162,76 @@ enum Distance: Int {
                 constant = 0.621371
             } else if to == .yard {
                 constant = 1093.61
+            } else if to == .millimeter {
+                constant = 1e+6
+            } else if to == .micrometer {
+                constant = 1e+9
+            } else if to == .nanometer {
+                constant = 1e+12
+            }
+            break
+            
+        case .millimeter:
+            if to == .inch {
+                constant = 0.0393701
+            } else if to == .centimeter {
+                constant = 0.1
+            } else if to == .foot {
+                constant = 0.00328084
+            } else if to == .meter {
+                constant = 0.001
+            } else if to == .mile {
+                constant = 6.2137e-7
+            } else if to == .yard {
+                constant = 0.00109361
+            } else if to == .kilometer {
+                constant = 1e-6
+            } else if to == .micrometer {
+                constant = 1000
+            } else if to == .nanometer {
+                constant = 1e+6
+            }
+            break
+        case .micrometer:
+            if to == .inch {
+                constant = 3.937e-5
+            } else if to == .centimeter {
+                constant = 1e-4
+            } else if to == .foot {
+                constant = 3.2808e-6
+            } else if to == .meter {
+                constant = 1e-6
+            } else if to == .mile {
+                constant = 6.2137e-10
+            } else if to == .yard {
+                constant = 1.0936e-6
+            } else if to == .kilometer {
+                constant = 1e-9
+            } else if to == .millimeter {
+                constant = 0.001
+            } else if to == .nanometer {
+                constant = 1000
+            }
+            break
+        case .nanometer:
+            if to == .inch {
+                constant = 3.937e-8
+            } else if to == .centimeter {
+                constant = 1e-7
+            } else if to == .foot {
+                constant = 3.2808e-9
+            } else if to == .meter {
+                constant = 1e-9
+            } else if to == .mile {
+                constant = 6.2137e-13
+            } else if to == .yard {
+                constant = 1.0936e-9
+            } else if to == .kilometer {
+                constant = 1e-12
+            } else if to == .millimeter {
+                constant = 1e-6
+            } else if to == .micrometer {
+                constant = 0.001
             }
             break
         }
@@ -147,6 +254,12 @@ enum Distance: Int {
             return .kilometer
         } else if string == "yard" {
             return .yard
+        } else if string == "millimeter" {
+            return .millimeter
+        } else if string == "micrometer" {
+            return .micrometer
+        } else if string == "nanometer" {
+            return .nanometer
         } else {
             return nil
         }
@@ -168,6 +281,12 @@ enum Distance: Int {
             return "yard"
         case .kilometer:
             return "kilometer"
+        case .millimeter:
+            return "millimeter"
+        case .micrometer:
+            return "micrometer"
+        case .nanometer:
+            return "nanometer"
         }
     }
     
