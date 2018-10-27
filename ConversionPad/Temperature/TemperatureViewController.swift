@@ -11,7 +11,7 @@ import UIKit
 class TemperatureViewController: UIViewController {
 
     @IBOutlet weak var lblTemperatureInputUnit: UILabel!
-    @IBOutlet weak var lblTemperatureInput: UITextField!
+    @IBOutlet weak var lblTemperatureInput: DecimalFormattedTextField!
     @IBOutlet weak var lblTemperatureOutput: UILabel!
     @IBOutlet weak var temperaturePicker: UIPickerView!
     
@@ -106,4 +106,3 @@ extension TemperatureViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         return pickerLabel
     }
 }
-

@@ -1,12 +1,19 @@
-//
+﻿//
 //  Temperature.swift
 //  ConversionPad
 //
 //  Created by Dinushanka Nayomal on 8/19/18.
 //  Copyright © 2018 Dinushanka Nayomal. All rights reserved.
 //
-
+//  Rajani Kumar - 10/27/18 - use constants for hardcoded strings. 
+//
 import Foundation
+
+struct Constants {
+    static let constCelsius = "celsius"
+    static let constFahrenheit = "fahrenheit"
+    static let constKelvin = "kelvin"
+}
 
 enum Temperature: Int {
     case celsius = 0, fahrenheit, kelvin
@@ -44,11 +51,11 @@ enum Temperature: Int {
     }
     
     static func fromString(_ string: String) -> Temperature? {
-        if string == "celsius" {
+        if string == constCelsius {
             return .celsius
-        } else if string == "fahrenheit" {
+        } else if string == constFahrenheit {
             return .fahrenheit
-        } else if string == "kelvin" {
+        } else if string == constKelvin {
             return .kelvin
         } else {
             return nil
@@ -58,11 +65,11 @@ enum Temperature: Int {
     func stringValue() -> String {
         switch self {
         case .celsius:
-            return "celsius"
+            return constCelsius
         case .fahrenheit:
-            return "fahrenheit"
+            return constFahrenheit
         case .kelvin:
-            return "kelvin"
+            return constKelvin
         }
     }
     
