@@ -18,13 +18,13 @@ enum Speed: Int {
             
         case .mps:
             if to == .ftps {
-                constant = SpeedConst.mps.toftps
+                constant = 3.28084
             } else if to == .kmph {
-                constant = SpeedConst.mps.tokmph
+                constant = 3.6
             } else if to == .mph {
-                constant = SpeedConst.mps.tomph
+                constant = 2.23694
             } else if to == .knot {
-                constant = SpeedConst.mps.toknot
+                constant = 1.94384
             } else if to == .mach
                 constant = 0.0030184123
             } else {
@@ -33,13 +33,13 @@ enum Speed: Int {
             break
         case .ftps:
             if to == .mps {
-                constant = SpeedConst.ftps.tomps
+                constant = 0.3048
             } else if to == .kmph {
-                constant = SpeedConst.ftps.tokmph
+                constant = 1.09728
             } else if to == .mph {
-                constant = SpeedConst.ftps.tomph
+                constant = 0.681818
             } else if to == .knot {
-                constant = SpeedConst.ftps.toknot
+                constant = 0.592484
             } else if to == .mach
                 constant = 0.00092001207
             } else {
@@ -48,13 +48,13 @@ enum Speed: Int {
             break
         case .kmph:
             if to == .mps {
-                constant = SpeedConst.kmph.tomps
+                constant = 0.277778
             } else if to == .ftps {
-                constant = SpeedConst.kmph.toftps
+                constant = 0.911344
             } else if to == .mph {
-                constant = SpeedConst.kmph.tomph
+                constant = 0.621371
             } else if to == .knot {
-                constant = SpeedConst.kmph.toknot
+                constant = 0.539957
             } else if to == .mach
                 constant = 0.00083844787
             } else {
@@ -63,13 +63,11 @@ enum Speed: Int {
             break
         case .mph:
             if to == .mps {
-                constant = SpeedConst.mph.tomps
+                constant = 0.44704
             } else if to == .ftps {
-                constant = SpeedConst.mph.toftps
+                constant = 1.46667
             } else if to == .kmph {
-                constant = SpeedConst.mph.tokmph
-            } else if to == .knot {
-                constant = SpeedConst.mph.toknot
+                constant = 1.60934
             } else if to == .mach
                 constant = 0.0013493510
             } else {
@@ -78,13 +76,13 @@ enum Speed: Int {
             break
         case .knot:
             if to == .mps {
-                constant = SpeedConst.knot.tomps
+                constant = 0.514444
             } else if to == .ftps {
-                constant = SpeedConst.knot.toftps
+                constant = 1.68781
             } else if to == .kmph {
-                constant = SpeedConst.knot.tokmph
+                constant = 1.852
             } else if to == .mph {
-                constant = SpeedConst.knot.tomph
+                constant = 1.15078
             } else if to == .mach
                 constant = 0.0015528054
             } else {
