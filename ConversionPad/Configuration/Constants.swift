@@ -57,3 +57,14 @@ enum SpeedConst {
   static let toMach = 1
   }
 }
+
+enum FrequencyConst {
+ enum hz {
+  static let hz = 1.0
+  static let rpm = 60.0
+ }
+ enum rpm {
+  static let hz = 0.01666666666
+  static let rpm = 1.0
+ }
+}
