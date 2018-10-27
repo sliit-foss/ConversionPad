@@ -11,7 +11,7 @@ import UIKit
 class SpeedViewController: UIViewController {
 
     @IBOutlet weak var lblSpeedInputUnit: UILabel!
-    @IBOutlet weak var lblSpeedInput: UITextField!
+    @IBOutlet weak var lblSpeedInput: DecimalFormattedTextField!
     @IBOutlet weak var lblSpeedOutput: UILabel!
     @IBOutlet weak var speedPicker: UIPickerView!
     

@@ -12,7 +12,7 @@ class DistanceViewController: UIViewController {
     
     @IBOutlet weak var lblOutputValue: UILabel!
     @IBOutlet weak var lblInputUnit: UILabel!
-    @IBOutlet weak var lblInputValue: UITextField!
+    @IBOutlet weak var lblInputValue: DecimalFormattedTextField!
     @IBOutlet weak var distancePicker: UIPickerView!
     
     let distances = Distance.toList()
