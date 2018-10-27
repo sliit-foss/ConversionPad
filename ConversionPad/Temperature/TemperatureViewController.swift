@@ -21,12 +21,33 @@ class TemperatureViewController: UIViewController {
         super.viewDidLoad()
         temperaturePicker.dataSource = self
         temperaturePicker.delegate = self
+        setupKeyboardToolbar()
         convertTemperatures()
         self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func temperatureChanged(_ sender: Any) {
         convertTemperatures()
+    }
+    
+    func setupKeyboardToolbar() {
+         let toolbar = UIToolbar(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: self.view.bounds.size.width,
+                                        height: 50))
+         let plusMinusButton = UIBarButtonItem(title: "+/-",
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(handlePlusMinus))
+         toolbar.items = [plusMinusButton]
+         lblTemperatureInput.inputAccessoryView = toolbar;
+    }
+    
+     @objc func handlePlusMinus() {
+          guard let value = lblTemperatureInput.text else {return}
+          guard let number = Double(value) else {return}
+          lblTemperatureInput.text = String(-number)
+           convertTemperatures()
     }
     
     func convertTemperatures() {
