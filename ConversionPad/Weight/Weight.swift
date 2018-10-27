@@ -18,65 +18,65 @@ enum Weight: Int {
             
         case .grams:
             if to == .kilogram {
-                constant = 0.001
+                constant = WeightConst.gram.tokilogram
             } else if to == .pound {
-                constant = 0.00220462
+                constant = WeightConst.gram.topound
             } else if to == .ounce {
-                constant = 0.035274
+                constant = WeightConst.gram.toounce
             } else if to == .ton {
-                constant = 1.0000010787e-6
+                constant = WeightConst.gram.toton
             } else {
                 constant = 1
             }
             break
         case .kilogram:
             if to == .grams {
-                constant = 1000
+                constant = WeightConst.kilogram.togram
             } else if to == .pound {
-                constant = 2.20462
+                constant = WeightConst.kilogram.topound
             } else if to == .ounce {
-                constant = 35.274
+                constant = WeightConst.kilogram.toounce
             } else if to == .ton {
-                constant = 0.001
+                constant = WeightConst.kilogram.toton
             } else {
                 constant = 1
             }
             break
         case .pound:
             if to == .grams {
-                constant = 453.592
+                constant = WeightConst.pound.togram
             } else if to == .kilogram {
-                constant = 0.453592
+                constant = WeightConst.pound.tokilogram
             } else if to == .ounce {
-                constant = 16
+                constant = WeightConst.pound.toounce
             } else if to == .ton {
-                constant = 0.000453592
+                constant = WeightConst.pound.toton
             } else {
                 constant = 1
             }
             break
         case .ounce:
             if to == .grams {
-                constant = 28.3495
+                constant = WeightConst.ounce.togram
             } else if to == .kilogram {
-                constant = 0.0283495
+                constant = WeightConst.ounce.tokilogram
             } else if to == .pound {
-                constant = 0.0625
+                constant = WeightConst.ounce.topound
             } else if to == .ton {
-                constant = 2.835e-5
+                constant = WeightConst.ounce.toton
             } else {
                 constant = 1
             }
             break
         case .ton:
             if to == .grams {
-                constant = 1e+6
+                constant = WeightConst.ton.togram
             } else if to == .kilogram {
-                constant = 1000
+                constant = WeightConst.ton.tokilogram
             } else if to == .pound {
-                constant = 2204.62
+                constant = WeightConst.ton.topound
             } else if to == .ounce {
-                constant = 35274
+                constant = WeightConst.ton.toounce
             } else {
                 constant = 1
             }
