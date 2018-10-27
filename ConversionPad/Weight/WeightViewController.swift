@@ -11,7 +11,7 @@ import UIKit
 class WeightViewController: UIViewController {
 
     @IBOutlet weak var lblWeightInputUnit: UILabel!
-    @IBOutlet weak var lblWeightInput: UITextField!
+    @IBOutlet weak var lblWeightInput: DecimalFormattedTextField!
     @IBOutlet weak var lblWeightOutput: UILabel!
     @IBOutlet weak var weighPicker: UIPickerView!
     

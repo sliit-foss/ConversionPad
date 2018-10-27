@@ -1,4 +1,4 @@
-﻿//
+//
 //  Temperature.swift
 //  ConversionPad
 //
@@ -51,11 +51,11 @@ enum Temperature: Int {
     }
     
     static func fromString(_ string: String) -> Temperature? {
-        if string == constCelsius {
+        if string == Constants.constCelsius {
             return .celsius
-        } else if string == constFahrenheit {
+        } else if string == Constants.constFahrenheit {
             return .fahrenheit
-        } else if string == constKelvin {
+        } else if string == Constants.constKelvin {
             return .kelvin
         } else {
             return nil
@@ -65,11 +65,11 @@ enum Temperature: Int {
     func stringValue() -> String {
         switch self {
         case .celsius:
-            return constCelsius
+            return Constants.constCelsius
         case .fahrenheit:
-            return constFahrenheit
+            return Constants.constFahrenheit
         case .kelvin:
-            return constKelvin
+            return Constants.constKelvin
         }
     }
     
