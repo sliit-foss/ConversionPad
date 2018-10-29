@@ -24,6 +24,8 @@
 		0D32E02C2128A9CE0050FBEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D32E02A2128A9CE0050FBEC /* LaunchScreen.storyboard */; };
 		0D32E0372128A9CE0050FBEC /* ConversionPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32E0362128A9CE0050FBEC /* ConversionPadTests.swift */; };
 		0D32E0422128A9CE0050FBEC /* ConversionPadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32E0412128A9CE0050FBEC /* ConversionPadUITests.swift */; };
+		47C4C3142184E03D00067195 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C3122184E03D00067195 /* Frequency.swift */; };
+		47C4C3152184E03D00067195 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C3132184E03D00067195 /* FrequencyViewController.swift */; };
 		634E06BE2183F9FA00E661B9 /* DecimalFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		0D32E03D2128A9CE0050FBEC /* ConversionPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConversionPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D32E0412128A9CE0050FBEC /* ConversionPadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPadUITests.swift; sourceTree = "<group>"; };
 		0D32E0432128A9CE0050FBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47C4C3122184E03D00067195 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
+		47C4C3132184E03D00067195 /* FrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalFormattedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 		0D32E0202128A9CB0050FBEC /* ConversionPad */ = {
 			isa = PBXGroup;
 			children = (
+				47C4C3112184E02500067195 /* Frequency */,
 				634E06BC2183F9AA00E661B9 /* Custom Components */,
 				0D32E0532128AB940050FBEC /* Configuration */,
 				0D32E0522128AB880050FBEC /* Speed */,
@@ -198,6 +203,15 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		47C4C3112184E02500067195 /* Frequency */ = {
+			isa = PBXGroup;
+			children = (
+				47C4C3122184E03D00067195 /* Frequency.swift */,
+				47C4C3132184E03D00067195 /* FrequencyViewController.swift */,
+			);
+			path = Frequency;
+			sourceTree = "<group>";
+		};
 		634E06BC2183F9AA00E661B9 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +288,7 @@
 				TargetAttributes = {
 					0D32E01D2128A9CB0050FBEC = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					0D32E0312128A9CE0050FBEC = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -343,6 +358,8 @@
 				0D038E1B2128B5BA00BED9D4 /* Temperature.swift in Sources */,
 				0D038E232128CE4F00BED9D4 /* ConversionPadMainViewController.swift in Sources */,
 				0D038E1F2128B5DB00BED9D4 /* Speed.swift in Sources */,
+				47C4C3152184E03D00067195 /* FrequencyViewController.swift in Sources */,
+				47C4C3142184E03D00067195 /* Frequency.swift in Sources */,
 				0D32E0222128A9CB0050FBEC /* AppDelegate.swift in Sources */,
 				0D038E0D2128AC2100BED9D4 /* DistanceViewController.swift in Sources */,
 				0D038E1D2128B5CE00BED9D4 /* Weight.swift in Sources */,
@@ -531,7 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.dinushanka.ConversionPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -549,7 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.dinushanka.ConversionPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
