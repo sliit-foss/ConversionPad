@@ -9,7 +9,7 @@
 import Foundation
 
 enum Weight: Int {
-    case grams = 0, kilogram, pound, ounce, ton
+    case grams = 0, kilogram, pound, ounce, ton, milligram, microgram
     
     func convertTo(weight to: Weight, value val: Double) -> Double {
         var constant = 1.0
@@ -25,6 +25,10 @@ enum Weight: Int {
                 constant = WeightConst.gram.toounce
             } else if to == .ton {
                 constant = WeightConst.gram.toton
+            } else if to == .milligram {
+                constant = WeightConst.gram.tomilligram
+            } else if to == .microgram {
+                constant = WeightConst.gram.tomicrogram
             } else {
                 constant = 1
             }
@@ -38,6 +42,10 @@ enum Weight: Int {
                 constant = WeightConst.kilogram.toounce
             } else if to == .ton {
                 constant = WeightConst.kilogram.toton
+            } else if to == .milligram {
+                constant = WeightConst.kilogram.tomilligram
+            } else if to == .microgram {
+                constant = WeightConst.kilogram.tomicrogram
             } else {
                 constant = 1
             }
@@ -51,6 +59,10 @@ enum Weight: Int {
                 constant = WeightConst.pound.toounce
             } else if to == .ton {
                 constant = WeightConst.pound.toton
+            } else if to == .milligram {
+                constant = WeightConst.pound.tomilligram
+            } else if to == .microgram {
+                constant = WeightConst.pound.tomicrogram
             } else {
                 constant = 1
             }
@@ -64,6 +76,10 @@ enum Weight: Int {
                 constant = WeightConst.ounce.topound
             } else if to == .ton {
                 constant = WeightConst.ounce.toton
+            } else if to == .milligram {
+                constant = WeightConst.ounce.tomilligram
+            } else if to == .microgram {
+                constant = WeightConst.ounce.tomicrogram
             } else {
                 constant = 1
             }
@@ -77,10 +93,46 @@ enum Weight: Int {
                 constant = WeightConst.ton.topound
             } else if to == .ounce {
                 constant = WeightConst.ton.toounce
+            } else if to == .milligram {
+                constant = WeightConst.ton.tomilligram
+            } else if to == .microgram {
+                constant = WeightConst.ton.tomicrogram
             } else {
                 constant = 1
             }
             break
+        case .milligram:
+            if to == .grams {
+                constant = WeightConst.milligram.togram
+            } else if to == .kilogram {
+                constant = WeightConst.milligram.tokilogram
+            } else if to == .pound {
+                constant = WeightConst.milligram.topound
+            } else if to == .ounce {
+                constant = WeightConst.milligram.toounce
+            } else if to == .ton {
+                constant = WeightConst.milligram.toton
+            } else if to == .microgram {
+                constant = WeightConst.milligram.tomicrogram
+            } else {
+                constant = 1
+            }
+        case .microgram:
+            if to == .grams {
+                constant = WeightConst.microgram.togram
+            } else if to == .kilogram {
+                constant = WeightConst.microgram.tokilogram
+            } else if to == .pound {
+                constant = WeightConst.microgram.topound
+            } else if to == .ounce {
+                constant = WeightConst.microgram.toounce
+            } else if to == .ton {
+                constant = WeightConst.microgram.toton
+            } else if to == .milligram {
+                constant = WeightConst.microgram.tomilligram
+            } else {
+                constant = 1
+            }
         }
         return val * constant
     }
@@ -96,6 +148,10 @@ enum Weight: Int {
             return .ounce
         } else if string == "ton" {
             return .ton
+        } else if string == "milligram" {
+            return .milligram
+        } else if string == "microgram" {
+            return .microgram
         } else {
             return nil
         }
@@ -113,6 +169,10 @@ enum Weight: Int {
             return "ounce"
         case .ton:
             return "ton"
+        case .milligram:
+            return "milligram"
+        case .microgram:
+            return "microgram"
         }
     }
     
