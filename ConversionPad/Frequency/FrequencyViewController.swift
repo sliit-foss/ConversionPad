@@ -16,6 +16,7 @@ class FrequencyViewController: UIViewController {
     @IBOutlet weak var frequencyPicker: UIPickerView!
     
     let frequencies = Frequency.allCases
+    var reversedFrequencies = [Frequency]()
     
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class FrequencyViewController: UIViewController {
         let fromUnitIdx = frequencyPicker.selectedRow(inComponent: 0)
         let toUnitIdx = frequencyPicker.selectedRow(inComponent: 1)
         let fromUnit = frequencies[fromUnitIdx]
-        let toUnit = frequencies[(frequencies.count - 1) - Int(toUnitIdx)]
+        let toUnit = reversedFrequencies[toUnitIdx]
 
         lblFrequencyInputUnit.text = " ".appending((fromUnit.title as AnyObject).capitalized).appending("")
         
@@ -70,13 +71,14 @@ extension FrequencyViewController: UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        reversedFrequencies = frequencies.reversed()
         let pickerLabel = UILabel()
+        
         switch component {
         case 0:
             pickerLabel.text = frequencies[row].title
-            break
         case 1:
-            pickerLabel.text = frequencies[(frequencies.count-1)-row].title
+            pickerLabel.text = reversedFrequencies[row].title
         default:
             pickerLabel.text = ""
         }
