@@ -15,7 +15,8 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var lblTemperatureOutput: UILabel!
     @IBOutlet weak var temperaturePicker: UIPickerView!
     
-    let temperatures = Temperature.toList()
+//    let temperatures = Temperature.toList()
+    let temperatures = Temperature.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +54,16 @@ class TemperatureViewController: UIViewController {
     func convertTemperatures() {
         let fromUnitIdx = temperaturePicker.selectedRow(inComponent: 0)
         let toUnitIdx = temperaturePicker.selectedRow(inComponent: 1)
+        let fromUnit = temperatures[fromUnitIdx]
+        let toUnit = temperatures[(temperatures.count-1) - Int(toUnitIdx)]
         
-        let fromUnit = Temperature.fromString(temperatures[fromUnitIdx])!
-        let toUnit = Temperature.fromString(temperatures[(temperatures.count-1) - Int(toUnitIdx)])!
-        lblTemperatureInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+        lblTemperatureInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
         if let inputText = lblTemperatureInput.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
-                let inputNum = Double(inputText)
-                let outputNum = fromUnit.convertTo(temperature: toUnit, value: inputNum!)
-                lblTemperatureOutput.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
+                let inputNum = Double(inputText) ?? 0.0
+                let outputNum = fromUnit.convert(inputNum, to: toUnit)
+                lblTemperatureOutput.text = String(outputNum).appending(" ").appending(toUnit.title.capitalized)
                 
             } else {
                 lblTemperatureOutput.text = " ".appending("...")
@@ -83,7 +84,7 @@ extension TemperatureViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return temperatures[row]
+        return temperatures[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -94,10 +95,10 @@ extension TemperatureViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         let pickerLabel = UILabel()
         switch component {
         case 0:
-            pickerLabel.text = temperatures[row]
+            pickerLabel.text = temperatures[row].title
             break
         case 1:
-            pickerLabel.text = temperatures[(temperatures.count-1)-row]
+            pickerLabel.text = temperatures[(temperatures.count-1)-row].title
         default:
             pickerLabel.text = ""
         }

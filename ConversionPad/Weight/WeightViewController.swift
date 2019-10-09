@@ -15,7 +15,7 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var lblWeightOutput: UILabel!
     @IBOutlet weak var weighPicker: UIPickerView!
     
-    let weights = Weight.toList()
+    let weights = Weight.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +32,16 @@ class WeightViewController: UIViewController {
     func convertWeights() {
         let fromUnitIdx = weighPicker.selectedRow(inComponent: 0)
         let toUnitIdx = weighPicker.selectedRow(inComponent: 1)
+        let fromUnit = weights[fromUnitIdx]
+        let toUnit = weights[(weights.count-1) - Int(toUnitIdx)]
         
-        let fromUnit = Weight.fromString(weights[fromUnitIdx])!
-        let toUnit = Weight.fromString(weights[(weights.count-1) - Int(toUnitIdx)])!
-        lblWeightInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+        lblWeightInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
         if let inputText = lblWeightInput.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
-                let inputNum = Double(inputText)
-                let outputNum = fromUnit.convertTo(weight: toUnit, value: inputNum!)
-                lblWeightOutput.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
+                let inputNum = Double(inputText) ?? 0.0
+                let outputNum = fromUnit.convert(inputNum, to: toUnit)
+                lblWeightOutput.text = String(outputNum).appending(" ").appending(toUnit.title.capitalized)
                 
             } else {
                 lblWeightOutput.text = " ".appending("...")
@@ -61,7 +61,7 @@ extension WeightViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return weights[row]
+        return weights[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -72,10 +72,10 @@ extension WeightViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let pickerLabel = UILabel()
         switch component {
         case 0:
-            pickerLabel.text = weights[row]
+            pickerLabel.text = weights[row].title
             break
         case 1:
-            pickerLabel.text = weights[(weights.count-1)-row]
+            pickerLabel.text = weights[(weights.count-1)-row].title
         default:
             pickerLabel.text = ""
         }
