@@ -27,90 +27,90 @@ enum Speed: String, CaseIterable {
             
         case .mps:
             if speed == .ftps {
-                constant = SpeedConst.mps.toftps
+                constant = SpeedConstant.mps.toftps
             } else if speed == .kmph {
-                constant = SpeedConst.mps.tokmph
+                constant = SpeedConstant.mps.tokmph
             } else if speed == .mph {
-                constant = SpeedConst.mps.tomph
+                constant = SpeedConstant.mps.tomph
             } else if speed == .knot {
-                constant = SpeedConst.mps.toknot
+                constant = SpeedConstant.mps.toknot
             } else if speed == .mach {
-                constant = SpeedConst.mps.toMach
+                constant = SpeedConstant.mps.toMach
             } else {
                 constant = 1
             }
             break
         case .ftps:
             if speed == .mps {
-                constant = SpeedConst.ftps.tomps
+                constant = SpeedConstant.ftps.tomps
             } else if speed == .kmph {
-                constant = SpeedConst.ftps.tokmph
+                constant = SpeedConstant.ftps.tokmph
             } else if speed == .mph {
-                constant = SpeedConst.ftps.tomph
+                constant = SpeedConstant.ftps.tomph
             } else if speed == .knot {
-                constant = SpeedConst.ftps.toknot
+                constant = SpeedConstant.ftps.toknot
             } else if speed == .mach {
-                constant = SpeedConst.ftps.toMach
+                constant = SpeedConstant.ftps.toMach
             } else {
                 constant = 1
             }
             break
         case .kmph:
             if speed == .mps {
-                constant = SpeedConst.kmph.tomps
+                constant = SpeedConstant.kmph.tomps
             } else if speed == .ftps {
-                constant = SpeedConst.kmph.toftps
+                constant = SpeedConstant.kmph.toftps
             } else if speed == .mph {
-                constant = SpeedConst.kmph.tomph
+                constant = SpeedConstant.kmph.tomph
             } else if speed == .knot {
-                constant = SpeedConst.kmph.toknot
+                constant = SpeedConstant.kmph.toknot
             } else if speed == .mach {
-                constant = SpeedConst.kmph.toMach
+                constant = SpeedConstant.kmph.toMach
             } else {
                 constant = 1
             }
             break
         case .mph:
             if speed == .mps {
-                constant = SpeedConst.mph.tomps
+                constant = SpeedConstant.mph.tomps
             } else if speed == .ftps {
-                constant = SpeedConst.mph.toftps
+                constant = SpeedConstant.mph.toftps
             } else if speed == .kmph {
-                constant = SpeedConst.mph.tokmph
+                constant = SpeedConstant.mph.tokmph
             } else if speed == .knot {
-                constant = SpeedConst.mph.toknot
+                constant = SpeedConstant.mph.toknot
             } else if speed == .mach {
-                constant = SpeedConst.mph.toMach
+                constant = SpeedConstant.mph.toMach
             } else {
                 constant = 1
             }
             break
         case .knot:
             if speed == .mps {
-                constant = SpeedConst.knot.tomps
+                constant = SpeedConstant.knot.tomps
             } else if speed == .ftps {
-                constant = SpeedConst.knot.toftps
+                constant = SpeedConstant.knot.toftps
             } else if speed == .kmph {
-                constant = SpeedConst.knot.tokmph
+                constant = SpeedConstant.knot.tokmph
             } else if speed == .mph {
-                constant = SpeedConst.knot.tomph
+                constant = SpeedConstant.knot.tomph
             } else if speed == .mach {
-                constant = SpeedConst.knot.toMach
+                constant = SpeedConstant.knot.toMach
             } else {
                 constant = 1
             }
             break
         case .mach:
             if speed == .mps {
-                constant = SpeedConst.mach.tomps
+                constant = SpeedConstant.mach.tomps
             } else if speed == .ftps {
-                constant = SpeedConst.mach.toftps
+                constant = SpeedConstant.mach.toftps
             } else if speed == .kmph {
-                constant = SpeedConst.mach.tokmph
+                constant = SpeedConstant.mach.tokmph
             } else if speed == .mph {
-                constant = SpeedConst.mach.tomph
+                constant = SpeedConstant.mach.tomph
             } else if speed == .knot {
-                constant = SpeedConst.mach.toknot
+                constant = SpeedConstant.mach.toknot
             } else {
                 constant = 1
             }

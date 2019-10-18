@@ -21,14 +21,14 @@ enum Frequency: String, CaseIterable {
         switch self {
         case .hz:
             if frequency == .rpm {
-                constant = FrequencyConst.hz.rpm
+                constant = FrequencyConstant.hz.rpm
             } else {
                 constant = 1
             }
             break
         case .rpm:
             if frequency == .hz {
-                constant = FrequencyConst.rpm.hz
+                constant = FrequencyConstant.rpm.hz
             } else {
                 constant = 1
             }

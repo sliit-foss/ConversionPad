@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FrequencyConst {
+enum FrequencyConstant {
     enum hz {
         static let hz = 1.0
         static let rpm = 60.0

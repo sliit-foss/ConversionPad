@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DistanceConst {
+enum DistanceConstant {
     enum inch {
         static let inch = 1.0
         static let centimeter = 2.54
