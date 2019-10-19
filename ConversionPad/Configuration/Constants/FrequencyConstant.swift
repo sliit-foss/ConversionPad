@@ -9,13 +9,13 @@
 import Foundation
 
 enum FrequencyConstant {
-    enum hz {
-        static let hz = 1.0
-        static let rpm = 60.0
+    enum fromHz {
+        static let toHz = 1.0
+        static let toRpm = 60.0
     }
-    
-    enum rpm {
-        static let hz = 0.01666666666
-        static let rpm = 1.0
+
+    enum fromRpm {
+        static let toHz = 0.01666666666
+        static let toRpm = 1.0
     }
 }
