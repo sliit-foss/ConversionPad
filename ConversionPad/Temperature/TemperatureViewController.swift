@@ -16,8 +16,6 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var temperaturePicker: UIPickerView!
     
     let temperatures = Temperature.allCases
-    var reversedTemperatures = [Temperature]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +54,7 @@ class TemperatureViewController: UIViewController {
         let fromUnitIdx = temperaturePicker.selectedRow(inComponent: 0)
         let toUnitIdx = temperaturePicker.selectedRow(inComponent: 1)
         let fromUnit = temperatures[fromUnitIdx]
-        let toUnit = temperatures[(temperatures.count-1) - Int(toUnitIdx)]
+        let toUnit = temperatures[(temperatures.endIndex-1) - Int(toUnitIdx)]
         
         lblTemperatureInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
@@ -93,14 +91,12 @@ extension TemperatureViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        reversedTemperatures = temperatures.reversed()
         let pickerLabel = UILabel()
-        
         switch component {
         case 0:
             pickerLabel.text = temperatures[row].title
         case 1:
-            pickerLabel.text = reversedTemperatures[row].title
+            pickerLabel.text = temperatures[(temperatures.endIndex-1) - row].title
         default:
             pickerLabel.text = ""
         }

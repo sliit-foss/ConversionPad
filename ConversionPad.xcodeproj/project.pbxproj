@@ -28,7 +28,7 @@
 		57879D3423596819005B758E /* SpeedConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57879D3323596819005B758E /* SpeedConstant.swift */; };
 		57879D3623596878005B758E /* WeightConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57879D3523596878005B758E /* WeightConstant.swift */; };
 		57879D38235968B9005B758E /* FrequencyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57879D37235968B9005B758E /* FrequencyConstant.swift */; };
-		57879D3A235968F7005B758E /* DistanceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57879D39235968F7005B758E /* DistanceConstant.swift */; };
+		57879D3E235D292B005B758E /* DistanceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57879D3D235D292B005B758E /* DistanceConstant.swift */; };
 		634E06BE2183F9FA00E661B9 /* DecimalFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,7 @@
 		57879D3323596819005B758E /* SpeedConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedConstant.swift; sourceTree = "<group>"; };
 		57879D3523596878005B758E /* WeightConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConstant.swift; sourceTree = "<group>"; };
 		57879D37235968B9005B758E /* FrequencyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyConstant.swift; sourceTree = "<group>"; };
-		57879D39235968F7005B758E /* DistanceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConstant.swift; sourceTree = "<group>"; };
+		57879D3D235D292B005B758E /* DistanceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConstant.swift; sourceTree = "<group>"; };
 		634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalFormattedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,7 +224,7 @@
 				57879D3323596819005B758E /* SpeedConstant.swift */,
 				57879D3523596878005B758E /* WeightConstant.swift */,
 				57879D37235968B9005B758E /* FrequencyConstant.swift */,
-				57879D39235968F7005B758E /* DistanceConstant.swift */,
+				57879D3D235D292B005B758E /* DistanceConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				634E06BE2183F9FA00E661B9 /* DecimalFormattedTextField.swift in Sources */,
 				0D038E1B2128B5BA00BED9D4 /* Temperature.swift in Sources */,
 				0D038E232128CE4F00BED9D4 /* ConversionPadMainViewController.swift in Sources */,
-				57879D3A235968F7005B758E /* DistanceConstant.swift in Sources */,
+				57879D3E235D292B005B758E /* DistanceConstant.swift in Sources */,
 				0D038E1F2128B5DB00BED9D4 /* Speed.swift in Sources */,
 				47C4C3152184E03D00067195 /* FrequencyViewController.swift in Sources */,
 				47C4C3142184E03D00067195 /* Frequency.swift in Sources */,

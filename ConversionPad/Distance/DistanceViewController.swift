@@ -16,8 +16,6 @@ class DistanceViewController: UIViewController {
     @IBOutlet weak var distancePicker: UIPickerView!
     
     let distances = Distance.allCases
-    var reversedDistances = [Distance]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +34,8 @@ class DistanceViewController: UIViewController {
         let fromUnitIdx = distancePicker.selectedRow(inComponent: 0)
         let toUnitIdx = distancePicker.selectedRow(inComponent: 1)
         let fromUnit = distances[fromUnitIdx]
-        let toUnit = distances[(distances.count-1) - Int(toUnitIdx)]
+        let toUnit = distances[(distances.endIndex-1) - Int(toUnitIdx)]
+
         
         lblInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
@@ -72,13 +71,12 @@ extension DistanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        reversedDistances = distances.reversed()
         let pickerLabel = UILabel()
         switch component {
         case 0:
             pickerLabel.text = distances[row].title
         case 1:
-            pickerLabel.text = reversedDistances[row].title
+            pickerLabel.text = distances[(distances.endIndex-1) - row].title
         default:
             pickerLabel.text = ""
         }

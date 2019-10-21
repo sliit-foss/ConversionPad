@@ -19,7 +19,6 @@ enum Distance: String, CaseIterable {
         var constant = 1.0
         
         switch self {
-        
         case .inch:
             if distance == .centimeter {
                 constant = DistanceConstant.fromInch.toCentimeter
@@ -41,7 +40,7 @@ enum Distance: String, CaseIterable {
                 constant = DistanceConstant.fromInch.toNanometer
             }
             break
-            
+
         case .centimeter:
             if distance == .inch {
                 constant = DistanceConstant.fromCentimeter.toInch
@@ -63,7 +62,7 @@ enum Distance: String, CaseIterable {
                 constant = DistanceConstant.fromCentimeter.toNanometer
             }
             break
-            
+
         case .foot:
             if distance == .inch {
                 constant = DistanceConstant.fromFoot.toInch
@@ -84,7 +83,7 @@ enum Distance: String, CaseIterable {
             } else if distance == .nanometer {
                 constant = DistanceConstant.fromFoot.toNanometer
             }
-            
+
             break
         case .meter:
             if distance == .inch {
@@ -108,7 +107,7 @@ enum Distance: String, CaseIterable {
             }
             break
         case .mile:
-            
+
             if distance == .inch {
                 constant = DistanceConstant.fromMile.toInch
             } else if distance == .centimeter {
@@ -150,7 +149,7 @@ enum Distance: String, CaseIterable {
                 constant = DistanceConstant.fromYard.toNanometer
             }
             break
-            
+
         case .kilometer:
             if distance == .inch {
                 constant = DistanceConstant.fromKilometer.toInch
@@ -172,7 +171,7 @@ enum Distance: String, CaseIterable {
                 constant = DistanceConstant.fromKilometer.toNanometer
             }
             break
-            
+
         case .millimeter:
             if distance == .inch {
                 constant = DistanceConstant.fromMillimeter.toInch
@@ -241,4 +240,3 @@ enum Distance: String, CaseIterable {
         return value * constant
     }
 }
-

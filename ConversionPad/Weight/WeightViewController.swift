@@ -16,8 +16,6 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var weighPicker: UIPickerView!
     
     let weights = Weight.allCases
-    var reversedWeights = [Weight]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,7 @@ class WeightViewController: UIViewController {
         let fromUnitIdx = weighPicker.selectedRow(inComponent: 0)
         let toUnitIdx = weighPicker.selectedRow(inComponent: 1)
         let fromUnit = weights[fromUnitIdx]
-        let toUnit = weights[(weights.count-1) - Int(toUnitIdx)]
+        let toUnit = weights[(weights.endIndex-1) - Int(toUnitIdx)]
         
         lblWeightInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
@@ -71,14 +69,13 @@ extension WeightViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        reversedWeights = weights.reversed()
         let pickerLabel = UILabel()
         
         switch component {
         case 0:
             pickerLabel.text = weights[row].title
         case 1:
-            pickerLabel.text = reversedWeights[row].title
+            pickerLabel.text = weights[(weights.endIndex - 1) - row].title
         default:
             pickerLabel.text = ""
         }

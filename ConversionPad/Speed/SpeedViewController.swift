@@ -16,8 +16,6 @@ class SpeedViewController: UIViewController {
     @IBOutlet weak var speedPicker: UIPickerView!
     
     let speeds = Speed.allCases
-    var reversedSpeeds = [Speed]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,7 @@ class SpeedViewController: UIViewController {
         let fromUnitIdx = speedPicker.selectedRow(inComponent: 0)
         let toUnitIdx = speedPicker.selectedRow(inComponent: 1)
         let fromUnit = speeds[fromUnitIdx]
-        let toUnit = speeds[(speeds.count-1) - Int(toUnitIdx)]
+        let toUnit = speeds[(speeds.endIndex-1) - Int(toUnitIdx)]
         
         lblSpeedInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
@@ -71,14 +69,13 @@ extension SpeedViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        reversedSpeeds = speeds.reversed()
         let pickerLabel = UILabel()
         
         switch component {
         case 0:
             pickerLabel.text = speeds[row].title
         case 1:
-            pickerLabel.text = reversedSpeeds[row].title
+            pickerLabel.text = speeds[(speeds.endIndex-1) - row].title
         default:
             pickerLabel.text = ""
         }

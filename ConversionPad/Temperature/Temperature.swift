@@ -9,12 +9,6 @@
 //
 import Foundation
 
-//struct Constants {
-//    static let constCelsius = "celsius"
-//    static let constFahrenheit = "fahrenheit"
-//    static let constKelvin = "kelvin"
-//}
-
 enum Temperature: String, CaseIterable {
     case celsius, fahrenheit, kelvin
     
