@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../ConversionPad/Speed/Speed.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../ConversionPad/Speed/SpeedViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/maheep/Documents/Playground Files/ConversionPad/ConversionPad/Speed">
+   </FileRef>
+   <FileRef
       location = "self:ConversionPad.xcodeproj">
    </FileRef>
 </Workspace>

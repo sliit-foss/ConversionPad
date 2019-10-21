@@ -10,7 +10,6 @@
 		0D038E0D2128AC2100BED9D4 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E0C2128AC2100BED9D4 /* DistanceViewController.swift */; };
 		0D038E0F2128AC7B00BED9D4 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E0E2128AC7B00BED9D4 /* TemperatureViewController.swift */; };
 		0D038E112128AC9300BED9D4 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E102128AC9300BED9D4 /* WeightViewController.swift */; };
-		0D038E152128ACAB00BED9D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E142128ACAB00BED9D4 /* Constants.swift */; };
 		0D038E172128ACBF00BED9D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E162128ACBF00BED9D4 /* Extensions.swift */; };
 		0D038E192128B5AF00BED9D4 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E182128B5AF00BED9D4 /* Distance.swift */; };
 		0D038E1B2128B5BA00BED9D4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D038E1A2128B5BA00BED9D4 /* Temperature.swift */; };
@@ -24,8 +23,9 @@
 		0D32E0422128A9CE0050FBEC /* ConversionPadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32E0412128A9CE0050FBEC /* ConversionPadUITests.swift */; };
 		47C4C3142184E03D00067195 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C3122184E03D00067195 /* Frequency.swift */; };
 		47C4C3152184E03D00067195 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4C3132184E03D00067195 /* FrequencyViewController.swift */; };
-		4C24893B235E284900D12FBB /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C248939235E284800D12FBB /* SpeedViewController.swift */; };
-		4C24893C235E284900D12FBB /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C24893A235E284800D12FBB /* Speed.swift */; };
+		4C705ACC235E4C3D0011D2A0 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C705ACA235E4C3D0011D2A0 /* SpeedViewController.swift */; };
+		4C705ACD235E4C3D0011D2A0 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C705ACB235E4C3D0011D2A0 /* Speed.swift */; };
+		4C705ACF235E4C9B0011D2A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C705ACE235E4C9B0011D2A0 /* Constants.swift */; };
 		634E06BE2183F9FA00E661B9 /* DecimalFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		0D038E0C2128AC2100BED9D4 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		0D038E0E2128AC7B00BED9D4 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		0D038E102128AC9300BED9D4 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
-		0D038E142128ACAB00BED9D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D038E162128ACBF00BED9D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0D038E182128B5AF00BED9D4 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		0D038E1A2128B5BA00BED9D4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
@@ -70,8 +69,9 @@
 		0D32E0432128A9CE0050FBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47C4C3122184E03D00067195 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		47C4C3132184E03D00067195 /* FrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
-		4C248939235E284800D12FBB /* SpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedViewController.swift; path = ../../../ConversionPad/ConversionPad/Speed/SpeedViewController.swift; sourceTree = "<group>"; };
-		4C24893A235E284800D12FBB /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Speed.swift; path = ../../../ConversionPad/ConversionPad/Speed/Speed.swift; sourceTree = "<group>"; };
+		4C705ACA235E4C3D0011D2A0 /* SpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedViewController.swift; path = Speed/SpeedViewController.swift; sourceTree = SOURCE_ROOT; };
+		4C705ACB235E4C3D0011D2A0 /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Speed.swift; path = Speed/Speed.swift; sourceTree = SOURCE_ROOT; };
+		4C705ACE235E4C9B0011D2A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
 		634E06BD2183F9FA00E661B9 /* DecimalFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalFormattedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,10 +123,10 @@
 		0D32E0202128A9CB0050FBEC /* ConversionPad */ = {
 			isa = PBXGroup;
 			children = (
+				4C705AC9235E4BF20011D2A0 /* Speed */,
 				47C4C3112184E02500067195 /* Frequency */,
 				634E06BC2183F9AA00E661B9 /* Custom Components */,
 				0D32E0532128AB940050FBEC /* Configuration */,
-				0D32E0522128AB880050FBEC /* Speed */,
 				0D32E0512128AB7B0050FBEC /* Weight */,
 				0D32E0502128AB720050FBEC /* Temperature */,
 				0D32E04F2128AB5B0050FBEC /* Distance */,
@@ -185,19 +185,10 @@
 			path = Weight;
 			sourceTree = "<group>";
 		};
-		0D32E0522128AB880050FBEC /* Speed */ = {
-			isa = PBXGroup;
-			children = (
-				4C24893A235E284800D12FBB /* Speed.swift */,
-				4C248939235E284800D12FBB /* SpeedViewController.swift */,
-			);
-			path = Speed;
-			sourceTree = "<group>";
-		};
 		0D32E0532128AB940050FBEC /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				0D038E142128ACAB00BED9D4 /* Constants.swift */,
+				4C705ACE235E4C9B0011D2A0 /* Constants.swift */,
 				0D038E162128ACBF00BED9D4 /* Extensions.swift */,
 			);
 			path = Configuration;
@@ -210,6 +201,15 @@
 				47C4C3132184E03D00067195 /* FrequencyViewController.swift */,
 			);
 			path = Frequency;
+			sourceTree = "<group>";
+		};
+		4C705AC9235E4BF20011D2A0 /* Speed */ = {
+			isa = PBXGroup;
+			children = (
+				4C705ACB235E4C3D0011D2A0 /* Speed.swift */,
+				4C705ACA235E4C3D0011D2A0 /* SpeedViewController.swift */,
+			);
+			path = Speed;
 			sourceTree = "<group>";
 		};
 		634E06BC2183F9AA00E661B9 /* Custom Components */ = {
@@ -353,19 +353,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D038E112128AC9300BED9D4 /* WeightViewController.swift in Sources */,
-				4C24893C235E284900D12FBB /* Speed.swift in Sources */,
 				634E06BE2183F9FA00E661B9 /* DecimalFormattedTextField.swift in Sources */,
 				0D038E1B2128B5BA00BED9D4 /* Temperature.swift in Sources */,
-				4C24893B235E284900D12FBB /* SpeedViewController.swift in Sources */,
+				4C705ACD235E4C3D0011D2A0 /* Speed.swift in Sources */,
 				0D038E232128CE4F00BED9D4 /* ConversionPadMainViewController.swift in Sources */,
+				4C705ACF235E4C9B0011D2A0 /* Constants.swift in Sources */,
 				47C4C3152184E03D00067195 /* FrequencyViewController.swift in Sources */,
 				47C4C3142184E03D00067195 /* Frequency.swift in Sources */,
 				0D32E0222128A9CB0050FBEC /* AppDelegate.swift in Sources */,
 				0D038E0D2128AC2100BED9D4 /* DistanceViewController.swift in Sources */,
+				4C705ACC235E4C3D0011D2A0 /* SpeedViewController.swift in Sources */,
 				0D038E1D2128B5CE00BED9D4 /* Weight.swift in Sources */,
 				0D038E192128B5AF00BED9D4 /* Distance.swift in Sources */,
 				0D038E0F2128AC7B00BED9D4 /* TemperatureViewController.swift in Sources */,
-				0D038E152128ACAB00BED9D4 /* Constants.swift in Sources */,
 				0D038E172128ACBF00BED9D4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
