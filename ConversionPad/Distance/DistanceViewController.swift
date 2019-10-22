@@ -15,7 +15,8 @@ class DistanceViewController: UIViewController {
     @IBOutlet weak var lblInputValue: DecimalFormattedTextField!
     @IBOutlet weak var distancePicker: UIPickerView!
     
-    let distances = Distance.toList()
+    // CaseIterable advantage
+    let distances = Distance.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,18 @@ class DistanceViewController: UIViewController {
     func convertDistances() {
         let fromUnitIdx = distancePicker.selectedRow(inComponent: 0)
         let toUnitIdx = distancePicker.selectedRow(inComponent: 1)
+        let fromUnit = distances[fromUnitIdx]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
+        let toUnit = distances[(distances.endIndex-1) - Int(toUnitIdx)]
+
         
-        let fromUnit = Distance.fromString(distances[fromUnitIdx])!
-        let toUnit = Distance.fromString(distances[(distances.count-1) - Int(toUnitIdx)])!
-        lblInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+        lblInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
         if let inputText = lblInputValue.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
-                let inputNum = Double(inputText)
-                let outputNum = fromUnit.convertTo(distance: toUnit, value: inputNum!)
-                lblOutputValue.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
+                let inputNum = Double(inputText) ?? 0.0
+                let outputNum = fromUnit.convert(inputNum, to: toUnit)
+                lblOutputValue.text = String(outputNum).appending(" ").appending(toUnit.title.capitalized)
                 
             } else {
                 lblOutputValue.text = " ".appending("...")
@@ -62,7 +65,7 @@ extension DistanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return distances[row]
+        return distances[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -73,10 +76,9 @@ extension DistanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let pickerLabel = UILabel()
         switch component {
         case 0:
-            pickerLabel.text = distances[row]
-            break
+            pickerLabel.text = distances[row].title
         case 1:
-            pickerLabel.text = distances[(distances.count-1)-row]
+            pickerLabel.text = distances[(distances.endIndex-1) - row].title
         default:
             pickerLabel.text = ""
         }
@@ -84,4 +86,5 @@ extension DistanceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }
+    
 }

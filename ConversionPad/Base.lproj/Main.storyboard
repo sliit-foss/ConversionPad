@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XqG-ha-X7y">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XqG-ha-X7y">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,19 +11,19 @@
         <!--Speed-->
         <scene sceneID="wdO-ym-tt5">
             <objects>
-                <viewController id="QRe-Ri-1Cg" customClass="SpeedViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeedViewController" id="QRe-Ri-1Cg" customClass="SpeedViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQM-1D-hX3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X4E-p7-g5f">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mpJ-Za-AFc">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-5c-QQR">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ4-5L-TvJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -40,7 +38,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-Ox-cCv" customClass="DecimalFormattedTextField" customModule="ConversionPad" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="73.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -52,10 +50,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfg-Xe-2if">
-                                                <rect key="frame" x="0.0" y="125" width="320" height="124.5"/>
+                                                <rect key="frame" x="0.0" y="130" width="320" height="129.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="6bF-TS-bIJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                                         <color key="backgroundColor" red="1" green="0.55020839850000003" blue="0.41279479689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,10 +64,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-i6-mCY">
-                                        <rect key="frame" x="0.0" y="249.5" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="320" height="259.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVk-yU-LMN">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                                 <color key="backgroundColor" red="0.69713260769999996" green="0.90831444299999997" blue="0.26879074469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pickerView>
                                         </subviews>
@@ -101,19 +99,19 @@
         <!--Weight-->
         <scene sceneID="EiK-yd-V1D">
             <objects>
-                <viewController id="TBx-yO-4P8" customClass="WeightViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeightViewController" id="TBx-yO-4P8" customClass="WeightViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTA-H8-0jc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HEp-k9-Afa">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JAy-QB-Ohn">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pYY-DQ-KPV">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs3-fP-6a0">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -128,7 +126,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZAd-b7-mNw" customClass="DecimalFormattedTextField" customModule="ConversionPad" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="73.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -140,10 +138,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urz-qm-yre">
-                                                <rect key="frame" x="0.0" y="125" width="320" height="124.5"/>
+                                                <rect key="frame" x="0.0" y="130" width="320" height="129.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="pdA-HB-RCd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                                         <color key="backgroundColor" red="0.76892876500189444" green="0.90831444299999997" blue="0.24218185274813667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,10 +152,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-yl-kFX">
-                                        <rect key="frame" x="0.0" y="249.5" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="320" height="259.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ll-Tv-s2a">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                                 <color key="backgroundColor" red="1" green="0.78286454329999999" blue="0.08693865529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pickerView>
                                         </subviews>
@@ -189,19 +187,19 @@
         <!--Distance-->
         <scene sceneID="UNL-Rh-NsX">
             <objects>
-                <viewController id="Ikh-H0-kl3" customClass="DistanceViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DistanceViewController" id="Ikh-H0-kl3" customClass="DistanceViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aHW-DF-w3h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iML-f7-dfO">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ftg-lf-29b">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-ww-yHn">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-Zd-Q96">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -216,7 +214,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-uh-5hH" customClass="DecimalFormattedTextField" customModule="ConversionPad" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="73.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -227,10 +225,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3G-6A-Iu4">
-                                                <rect key="frame" x="0.0" y="125" width="320" height="124.5"/>
+                                                <rect key="frame" x="0.0" y="130" width="320" height="129.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-zK-RcB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                                         <color key="backgroundColor" red="0.45826595841505335" green="0.70619254699778944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,10 +239,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV6-r8-Y6k">
-                                        <rect key="frame" x="0.0" y="249.5" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="320" height="259.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xif-XN-Vzw">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                                 <color key="backgroundColor" red="0.69713260769999996" green="0.90831444299999997" blue="0.26879074469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pickerView>
                                         </subviews>
@@ -276,19 +274,19 @@
         <!--Temperature-->
         <scene sceneID="R5x-Ij-tu3">
             <objects>
-                <viewController id="7X9-te-Q3I" customClass="TemperatureViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TemperatureViewController" id="7X9-te-Q3I" customClass="TemperatureViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LmO-hW-J7D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EQf-5D-vNf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nXp-Vk-D3b">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-oo-Sw1">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdq-zB-zU3">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -303,7 +301,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a Value" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Os4-0B-ccU" customClass="DecimalFormattedTextField" customModule="ConversionPad" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="56.5" width="320" height="73.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -315,10 +313,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oic-Us-qHB">
-                                                <rect key="frame" x="0.0" y="125" width="320" height="124.5"/>
+                                                <rect key="frame" x="0.0" y="130" width="320" height="129.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="2n4-sW-mGM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                                         <color key="backgroundColor" red="0.93833280456852797" green="0.74090555173226647" blue="0.082328362127299506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -329,10 +327,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyA-dE-WXu">
-                                        <rect key="frame" x="0.0" y="249.5" width="320" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="320" height="259.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-Vo-l5q">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
                                                 <color key="backgroundColor" red="0.69713260769999996" green="0.90831444299999997" blue="0.26879074469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pickerView>
                                         </subviews>
@@ -392,7 +390,7 @@
         <!--Frequency-->
         <scene sceneID="wM5-uO-rXX">
             <objects>
-                <viewController id="1vX-nF-Uf9" customClass="FrequencyViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrequencyViewController" id="1vX-nF-Uf9" customClass="FrequencyViewController" customModule="ConversionPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="20B-aY-cwK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,7 +400,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LyP-eA-59R">
-                                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-Q7-sm0">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
@@ -493,10 +491,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Distance" width="37.5" height="37.5"/>
-        <image name="Frequency" width="48" height="48"/>
-        <image name="Speed" width="37.5" height="37.5"/>
-        <image name="Temperature" width="37.5" height="37.5"/>
-        <image name="Weight" width="37.5" height="37.5"/>
+        <image name="Distance" width="25" height="25"/>
+        <image name="Frequency" width="24" height="24"/>
+        <image name="Speed" width="25" height="25"/>
+        <image name="Temperature" width="25" height="25"/>
+        <image name="Weight" width="25" height="25"/>
     </resources>
 </document>

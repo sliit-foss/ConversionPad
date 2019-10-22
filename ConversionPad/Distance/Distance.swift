@@ -8,296 +8,235 @@
 
 import Foundation
 
-enum Distance: Int {
-    case inch = 0, centimeter, foot, meter, mile, yard, kilometer, millimeter, micrometer, nanometer
+enum Distance: String, CaseIterable {
+    case inch, centimeter, foot, meter, mile, yard, kilometer, millimeter, micrometer, nanometer
     
-    func convertTo(distance to: Distance, value val: Double) -> Double {
+    var title: String {
+        return self.rawValue
+    }
+    
+    func convert(_ value: Double, to distance: Distance) -> Double {
         var constant = 1.0
         
         switch self {
-        
         case .inch:
-        
-            if to == .centimeter {
-                constant = 2.54
-            } else if to == .foot {
-                constant = 0.08333333
-            } else if to == .meter {
-                constant = 0.0254
-            } else if to == .mile {
-                constant = 1.5783e-5
-            } else if to == .yard {
-                constant = 0.0277778
-            } else if to == .kilometer {
-                constant = 2.540002032e-5
-            } else if to == .millimeter {
-                constant = 25.4
-            } else if to == .micrometer {
-                constant = 25400
-            } else if to == .nanometer {
-                constant = 2.54e+7
+            if distance == .centimeter {
+                constant = DistanceConstant.fromInch.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromInch.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromInch.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromInch.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromInch.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromInch.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromInch.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromInch.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromInch.toNanometer
             }
             break
-            
+
         case .centimeter:
-            
-            if to == .inch {
-                constant = 0.0393701
-            } else if to == .foot {
-                constant = 0.0328084
-            } else if to == .meter {
-                constant = 0.01
-            } else if to == .mile {
-                constant = 6.2137e-6
-            } else if to == .yard {
-                constant = 0.0109361
-            } else if to == .kilometer {
-                constant = 1e-5
-            } else if to == .millimeter {
-                constant = 10
-            } else if to == .micrometer {
-                constant = 10000
-            } else if to == .nanometer {
-                constant = 1e+7
+            if distance == .inch {
+                constant = DistanceConstant.fromCentimeter.toInch
+            } else if distance == .foot {
+                constant = DistanceConstant.fromCentimeter.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromCentimeter.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromCentimeter.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromCentimeter.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromCentimeter.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromCentimeter.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromCentimeter.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromCentimeter.toNanometer
             }
             break
-            
+
         case .foot:
-            if to == .inch {
-                constant = 12;
-            } else if to == .centimeter {
-                constant = 30.48
-            } else if to == .meter {
-                constant = 0.3048
-            } else if to == .mile {
-                constant = 0.000189394
-            } else if to == .yard {
-                constant = 0.333333
-            } else if to == .kilometer {
-                constant = 0.0003048
-            } else if to == .millimeter {
-                constant = 304.8
-            } else if to == .micrometer {
-                constant = 304800
-            } else if to == .nanometer {
-                constant = 3.048e+8
+            if distance == .inch {
+                constant = DistanceConstant.fromFoot.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromFoot.toCentimeter
+            } else if distance == .meter {
+                constant = DistanceConstant.fromFoot.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromFoot.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromFoot.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromFoot.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromFoot.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromFoot.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromFoot.toNanometer
             }
-            
+
             break
         case .meter:
-            if to == .inch {
-                constant = 39.3701
-            } else if to == .centimeter {
-                constant = 100
-            } else if to == .foot {
-                constant = 3.28084
-            } else if to == .mile {
-                constant = 0.000621371
-            } else if to == .yard {
-                constant = 1.09361
-            } else if to == .kilometer {
-                constant = 0.001
-            } else if to == .millimeter {
-                constant = 1000
-            } else if to == .micrometer {
-                constant = 1e+6
-            } else if to == .nanometer {
-                constant = 1e+9
+            if distance == .inch {
+                constant = DistanceConstant.fromMeter.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromMeter.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromMeter.toFoot
+            } else if distance == .mile {
+                constant = DistanceConstant.fromMeter.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromMeter.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromMeter.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromMeter.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromMeter.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromMeter.toNanometer
             }
             break
         case .mile:
-            
-            if to == .inch {
-                constant = 63360
-            } else if to == .centimeter {
-                constant = 160934
-            } else if to == .foot {
-                constant = 5280
-            } else if to == .meter {
-                constant = 1609.34
-            } else if to == .yard {
-                constant = 1760
-            } else if to == .kilometer {
-                constant = 1.60934
-            } else if to == .millimeter {
-                constant = 1.609e+6
-            } else if to == .micrometer {
-                constant = 1608999999.98412
-            } else if to == .nanometer {
-                constant = 1608999999984.1196289
+
+            if distance == .inch {
+                constant = DistanceConstant.fromMile.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromMile.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromMile.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromMile.toMeter
+            } else if distance == .yard {
+                constant = DistanceConstant.fromMile.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromMile.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromMile.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromMile.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromMile.toNanometer
             }
             break
         case .yard:
-            if to == .inch {
-                constant = 36
-            } else if to == .centimeter {
-                constant = 91.44
-            } else if to == .foot {
-                constant = 3
-            } else if to == .meter {
-                constant = 0.9144
-            } else if to == .mile {
-                constant = 0.000568182
-            } else if to == .kilometer {
-                constant = 0.000914400292608
-            } else if to == .millimeter {
-                constant = 914.4
-            } else if to == .micrometer {
-                constant = 914400
-            } else if to == .nanometer {
-                constant = 9.144e+8
+            if distance == .inch {
+                constant = DistanceConstant.fromYard.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromYard.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromYard.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromYard.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromYard.toMile
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromYard.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromYard.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromYard.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromYard.toNanometer
             }
             break
-            
+
         case .kilometer:
-            if to == .inch {
-                constant = 39370.1
-            } else if to == .centimeter {
-                constant = 100000
-            } else if to == .foot {
-                constant = 3280.84
-            } else if to == .meter {
-                constant = 1000
-            } else if to == .mile {
-                constant = 0.621371
-            } else if to == .yard {
-                constant = 1093.61
-            } else if to == .millimeter {
-                constant = 1e+6
-            } else if to == .micrometer {
-                constant = 1e+9
-            } else if to == .nanometer {
-                constant = 1e+12
+            if distance == .inch {
+                constant = DistanceConstant.fromKilometer.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromKilometer.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromKilometer.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromKilometer.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromKilometer.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromKilometer.toYard
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromKilometer.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromKilometer.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromKilometer.toNanometer
             }
             break
-            
+
         case .millimeter:
-            if to == .inch {
-                constant = 0.0393701
-            } else if to == .centimeter {
-                constant = 0.1
-            } else if to == .foot {
-                constant = 0.00328084
-            } else if to == .meter {
-                constant = 0.001
-            } else if to == .mile {
-                constant = 6.2137e-7
-            } else if to == .yard {
-                constant = 0.00109361
-            } else if to == .kilometer {
-                constant = 1e-6
-            } else if to == .micrometer {
-                constant = 1000
-            } else if to == .nanometer {
-                constant = 1e+6
+            if distance == .inch {
+                constant = DistanceConstant.fromMillimeter.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromMillimeter.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromMillimeter.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromMillimeter.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromMillimeter.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromMillimeter.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromMillimeter.toKilometer
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromMillimeter.toMicrometer
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromMillimeter.toNanometer
             }
             break
         case .micrometer:
-            if to == .inch {
-                constant = 3.937e-5
-            } else if to == .centimeter {
-                constant = 1e-4
-            } else if to == .foot {
-                constant = 3.2808e-6
-            } else if to == .meter {
-                constant = 1e-6
-            } else if to == .mile {
-                constant = 6.2137e-10
-            } else if to == .yard {
-                constant = 1.0936e-6
-            } else if to == .kilometer {
-                constant = 1e-9
-            } else if to == .millimeter {
-                constant = 0.001
-            } else if to == .nanometer {
-                constant = 1000
+            if distance == .inch {
+                constant = DistanceConstant.fromMicrometer.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromMicrometer.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromMicrometer.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromMicrometer.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromMicrometer.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromMicrometer.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromMicrometer.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromMicrometer.toMillimeter
+            } else if distance == .nanometer {
+                constant = DistanceConstant.fromMicrometer.toNanometer
             }
             break
         case .nanometer:
-            if to == .inch {
-                constant = 3.937e-8
-            } else if to == .centimeter {
-                constant = 1e-7
-            } else if to == .foot {
-                constant = 3.2808e-9
-            } else if to == .meter {
-                constant = 1e-9
-            } else if to == .mile {
-                constant = 6.2137e-13
-            } else if to == .yard {
-                constant = 1.0936e-9
-            } else if to == .kilometer {
-                constant = 1e-12
-            } else if to == .millimeter {
-                constant = 1e-6
-            } else if to == .micrometer {
-                constant = 0.001
+            if distance == .inch {
+                constant = DistanceConstant.fromNanometer.toInch
+            } else if distance == .centimeter {
+                constant = DistanceConstant.fromNanometer.toCentimeter
+            } else if distance == .foot {
+                constant = DistanceConstant.fromNanometer.toFoot
+            } else if distance == .meter {
+                constant = DistanceConstant.fromNanometer.toMeter
+            } else if distance == .mile {
+                constant = DistanceConstant.fromNanometer.toMile
+            } else if distance == .yard {
+                constant = DistanceConstant.fromNanometer.toYard
+            } else if distance == .kilometer {
+                constant = DistanceConstant.fromNanometer.toKilometer
+            } else if distance == .millimeter {
+                constant = DistanceConstant.fromNanometer.toMillimeter
+            } else if distance == .micrometer {
+                constant = DistanceConstant.fromNanometer.toMicrometer
             }
             break
         }
         
-        return val * constant
-    }
-    
-    static func fromString(_ string: String) -> Distance? {
-        if string == "inch" {
-            return .inch
-        } else if string == "centimeter" {
-            return .centimeter
-        } else if string == "foot" {
-            return .foot
-        } else if string == "meter" {
-            return .meter
-        } else if string == "mile" {
-            return .mile
-        } else if string == "kilometer" {
-            return .kilometer
-        } else if string == "yard" {
-            return .yard
-        } else if string == "millimeter" {
-            return .millimeter
-        } else if string == "micrometer" {
-            return .micrometer
-        } else if string == "nanometer" {
-            return .nanometer
-        } else {
-            return nil
-        }
-    }
-    
-    func stringValue() -> String {
-        switch self {
-        case .inch:
-            return "inch"
-        case .centimeter:
-            return "centimeter"
-        case .foot:
-            return "foot"
-        case .meter:
-            return "meter"
-        case .mile:
-            return "mile"
-        case .yard:
-            return "yard"
-        case .kilometer:
-            return "kilometer"
-        case .millimeter:
-            return "millimeter"
-        case .micrometer:
-            return "micrometer"
-        case .nanometer:
-            return "nanometer"
-        }
-    }
-    
-    static func toList() -> [String] {
-        var i = 0
-        var list = [String]()
-        while let distance = Distance(rawValue: i) {
-            list.append(distance.stringValue())
-            i = i + 1
-        }
-        return list
+        return value * constant
     }
 }
-

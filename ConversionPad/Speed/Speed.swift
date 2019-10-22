@@ -8,150 +8,114 @@
 
 import Foundation
 
-enum Speed: Int {
-    case mps = 0, ftps, knot, mph, mach, kmph
+enum Speed: String, CaseIterable {
+    case mps = "meters per second"
+    case ftps = "feet per second"
+    case knot = "knot"
+    case mph = "miles per hour"
+    case mach = "mach"
+    case kmph = "kilometers per hour"
     
-    func convertTo(speed to: Speed, value val: Double) -> Double {
+    var title: String {
+        return self.rawValue
+    }
+    
+    func convert(_ value: Double, to speed: Speed) -> Double {
         var constant = 1.0
         
         switch self {
             
         case .mps:
-            if to == .ftps {
-                constant = SpeedConst.mps.toftps
-            } else if to == .kmph {
-                constant = SpeedConst.mps.tokmph
-            } else if to == .mph {
-                constant = SpeedConst.mps.tomph
-            } else if to == .knot {
-                constant = SpeedConst.mps.toknot
-            } else if to == .mach {
-                constant = SpeedConst.mps.toMach
+            if speed == .ftps {
+                constant = SpeedConstant.fromMps.toFtps
+            } else if speed == .kmph {
+                constant = SpeedConstant.fromMps.toKmph
+            } else if speed == .mph {
+                constant = SpeedConstant.fromMps.toMph
+            } else if speed == .knot {
+                constant = SpeedConstant.fromMps.toKnot
+            } else if speed == .mach {
+                constant = SpeedConstant.fromMps.toMach
             } else {
                 constant = 1
             }
             break
         case .ftps:
-            if to == .mps {
-                constant = SpeedConst.ftps.tomps
-            } else if to == .kmph {
-                constant = SpeedConst.ftps.tokmph
-            } else if to == .mph {
-                constant = SpeedConst.ftps.tomph
-            } else if to == .knot {
-                constant = SpeedConst.ftps.toknot
-            } else if to == .mach {
-                constant = SpeedConst.ftps.toMach
+            if speed == .mps {
+                constant = SpeedConstant.fromFtps.toMps
+            } else if speed == .kmph {
+                constant = SpeedConstant.fromFtps.toKmph
+            } else if speed == .mph {
+                constant = SpeedConstant.fromFtps.toMph
+            } else if speed == .knot {
+                constant = SpeedConstant.fromFtps.toKnot
+            } else if speed == .mach {
+                constant = SpeedConstant.fromFtps.toMach
             } else {
                 constant = 1
             }
             break
         case .kmph:
-            if to == .mps {
-                constant = SpeedConst.kmph.tomps
-            } else if to == .ftps {
-                constant = SpeedConst.kmph.toftps
-            } else if to == .mph {
-                constant = SpeedConst.kmph.tomph
-            } else if to == .knot {
-                constant = SpeedConst.kmph.toknot
-            } else if to == .mach {
-                constant = SpeedConst.kmph.toMach
+            if speed == .mps {
+                constant = SpeedConstant.fromKmph.toMps
+            } else if speed == .ftps {
+                constant = SpeedConstant.fromKmph.toFtps
+            } else if speed == .mph {
+                constant = SpeedConstant.fromKmph.toMph
+            } else if speed == .knot {
+                constant = SpeedConstant.fromKmph.toKnot
+            } else if speed == .mach {
+                constant = SpeedConstant.fromKmph.toMach
             } else {
                 constant = 1
             }
             break
         case .mph:
-            if to == .mps {
-                constant = SpeedConst.mph.tomps
-            } else if to == .ftps {
-                constant = SpeedConst.mph.toftps
-            } else if to == .kmph {
-                constant = SpeedConst.mph.tokmph
-            } else if to == .knot {
-                constant = SpeedConst.mph.toknot
-            } else if to == .mach {
-                constant = SpeedConst.mph.toMach
+            if speed == .mps {
+                constant = SpeedConstant.fromMph.toMps
+            } else if speed == .ftps {
+                constant = SpeedConstant.fromMph.toFtps
+            } else if speed == .kmph {
+                constant = SpeedConstant.fromMph.toKmph
+            } else if speed == .knot {
+                constant = SpeedConstant.fromMph.toKnot
+            } else if speed == .mach {
+                constant = SpeedConstant.fromMph.toMach
             } else {
                 constant = 1
             }
             break
         case .knot:
-            if to == .mps {
-                constant = SpeedConst.knot.tomps
-            } else if to == .ftps {
-                constant = SpeedConst.knot.toftps
-            } else if to == .kmph {
-                constant = SpeedConst.knot.tokmph
-            } else if to == .mph {
-                constant = SpeedConst.knot.tomph
-            } else if to == .mach {
-                constant = SpeedConst.knot.toMach
+            if speed == .mps {
+                constant = SpeedConstant.fromKnot.toMps
+            } else if speed == .ftps {
+                constant = SpeedConstant.fromKnot.toFtps
+            } else if speed == .kmph {
+                constant = SpeedConstant.fromKnot.toKmph
+            } else if speed == .mph {
+                constant = SpeedConstant.fromKnot.toMph
+            } else if speed == .mach {
+                constant = SpeedConstant.fromKnot.toMach
             } else {
                 constant = 1
             }
             break
         case .mach:
-            if to == .mps {
-                constant = SpeedConst.mach.tomps
-            } else if to == .ftps {
-                constant = SpeedConst.mach.toftps
-            } else if to == .kmph {
-                constant = SpeedConst.mach.tokmph
-            } else if to == .mph {
-                constant = SpeedConst.mach.tomph
-            } else if to == .knot {
-                constant = SpeedConst.mach.toknot
+            if speed == .mps {
+                constant = SpeedConstant.fromMach.toMps
+            } else if speed == .ftps {
+                constant = SpeedConstant.fromMach.toFtps
+            } else if speed == .kmph {
+                constant = SpeedConstant.fromMach.toKmph
+            } else if speed == .mph {
+                constant = SpeedConstant.fromMach.toMph
+            } else if speed == .knot {
+                constant = SpeedConstant.fromMach.toKnot
             } else {
                 constant = 1
             }
             break
         }
-        return val * constant
-    }
-    
-    static func fromString(_ string: String) -> Speed? {
-        if string == "knot" {
-            return .knot
-        } else if string == "meters per second" {
-            return .mps
-        } else if string == "feet per second" {
-            return .ftps
-        } else if string == "miles per hour" {
-            return .mph
-        } else if string == "kilometers per hour" {
-            return .kmph
-        } else if string == "mach" {
-            return .mach
-        } else {
-            return nil
-        }
-    }
-    
-    func stringValue() -> String {
-        switch self {
-        case .mach:
-            return "mach"
-        case .knot:
-            return "knot"
-        case .mps:
-            return "meters per second"
-        case .ftps:
-            return "feet per second"
-        case .mph:
-            return "miles per hour"
-        case .kmph:
-            return "kilometers per hour"
-        }
-    }
-    
-    static func toList() -> [String] {
-        var i = 0
-        var list = [String]()
-        while let speed = Speed(rawValue: i) {
-            list.append(speed.stringValue())
-            i = i + 1
-        }
-        return list
+        return value * constant
     }
 }

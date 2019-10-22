@@ -8,181 +8,136 @@
 
 import Foundation
 
-enum Weight: Int {
-    case grams = 0, kilogram, pound, ounce, ton, milligram, microgram
+enum Weight: String, CaseIterable {
+    case grams, kilogram, pound, ounce, ton, milligram, microgram
     
-    func convertTo(weight to: Weight, value val: Double) -> Double {
+    var title: String {
+        return self.rawValue
+    }
+    
+    func convert(_ value: Double, to weight: Weight) -> Double {
         var constant = 1.0
         
         switch self {
             
         case .grams:
-            if to == .kilogram {
-                constant = WeightConst.gram.tokilogram
-            } else if to == .pound {
-                constant = WeightConst.gram.topound
-            } else if to == .ounce {
-                constant = WeightConst.gram.toounce
-            } else if to == .ton {
-                constant = WeightConst.gram.toton
-            } else if to == .milligram {
-                constant = WeightConst.gram.tomilligram
-            } else if to == .microgram {
-                constant = WeightConst.gram.tomicrogram
+            if weight == .kilogram {
+                constant = WeightConstant.fromGram.toKilogram
+            } else if weight == .pound {
+                constant = WeightConstant.fromGram.toPound
+            } else if weight == .ounce {
+                constant = WeightConstant.fromGram.toOunce
+            } else if weight == .ton {
+                constant = WeightConstant.fromGram.toTon
+            } else if weight == .milligram {
+                constant = WeightConstant.fromGram.toMilligram
+            } else if weight == .microgram {
+                constant = WeightConstant.fromGram.toMicrogram
             } else {
                 constant = 1
             }
             break
         case .kilogram:
-            if to == .grams {
-                constant = WeightConst.kilogram.togram
-            } else if to == .pound {
-                constant = WeightConst.kilogram.topound
-            } else if to == .ounce {
-                constant = WeightConst.kilogram.toounce
-            } else if to == .ton {
-                constant = WeightConst.kilogram.toton
-            } else if to == .milligram {
-                constant = WeightConst.kilogram.tomilligram
-            } else if to == .microgram {
-                constant = WeightConst.kilogram.tomicrogram
+            if weight == .grams {
+                constant = WeightConstant.fromKilogram.toGram
+            } else if weight == .pound {
+                constant = WeightConstant.fromKilogram.toPound
+            } else if weight == .ounce {
+                constant = WeightConstant.fromKilogram.toOunce
+            } else if weight == .ton {
+                constant = WeightConstant.fromKilogram.toTon
+            } else if weight == .milligram {
+                constant = WeightConstant.fromKilogram.toMilligram
+            } else if weight == .microgram {
+                constant = WeightConstant.fromKilogram.toMicrogram
             } else {
                 constant = 1
             }
             break
         case .pound:
-            if to == .grams {
-                constant = WeightConst.pound.togram
-            } else if to == .kilogram {
-                constant = WeightConst.pound.tokilogram
-            } else if to == .ounce {
-                constant = WeightConst.pound.toounce
-            } else if to == .ton {
-                constant = WeightConst.pound.toton
-            } else if to == .milligram {
-                constant = WeightConst.pound.tomilligram
-            } else if to == .microgram {
-                constant = WeightConst.pound.tomicrogram
+            if weight == .grams {
+                constant = WeightConstant.fromPound.toGram
+            } else if weight == .kilogram {
+                constant = WeightConstant.fromPound.toKilogram
+            } else if weight == .ounce {
+                constant = WeightConstant.fromPound.toOunce
+            } else if weight == .ton {
+                constant = WeightConstant.fromPound.toTon
+            } else if weight == .milligram {
+                constant = WeightConstant.fromPound.toMilligram
+            } else if weight == .microgram {
+                constant = WeightConstant.fromPound.toMicrogram
             } else {
                 constant = 1
             }
             break
         case .ounce:
-            if to == .grams {
-                constant = WeightConst.ounce.togram
-            } else if to == .kilogram {
-                constant = WeightConst.ounce.tokilogram
-            } else if to == .pound {
-                constant = WeightConst.ounce.topound
-            } else if to == .ton {
-                constant = WeightConst.ounce.toton
-            } else if to == .milligram {
-                constant = WeightConst.ounce.tomilligram
-            } else if to == .microgram {
-                constant = WeightConst.ounce.tomicrogram
+            if weight == .grams {
+                constant = WeightConstant.fromOunce.toGram
+            } else if weight == .kilogram {
+                constant = WeightConstant.fromOunce.toKilogram
+            } else if weight == .pound {
+                constant = WeightConstant.fromOunce.toPound
+            } else if weight == .ton {
+                constant = WeightConstant.fromOunce.toTon
+            } else if weight == .milligram {
+                constant = WeightConstant.fromOunce.toMilligram
+            } else if weight == .microgram {
+                constant = WeightConstant.fromOunce.toMicrogram
             } else {
                 constant = 1
             }
             break
         case .ton:
-            if to == .grams {
-                constant = WeightConst.ton.togram
-            } else if to == .kilogram {
-                constant = WeightConst.ton.tokilogram
-            } else if to == .pound {
-                constant = WeightConst.ton.topound
-            } else if to == .ounce {
-                constant = WeightConst.ton.toounce
-            } else if to == .milligram {
-                constant = WeightConst.ton.tomilligram
-            } else if to == .microgram {
-                constant = WeightConst.ton.tomicrogram
+            if weight == .grams {
+                constant = WeightConstant.fromTon.toGram
+            } else if weight == .kilogram {
+                constant = WeightConstant.fromTon.toKilogram
+            } else if weight == .pound {
+                constant = WeightConstant.fromTon.toPound
+            } else if weight == .ounce {
+                constant = WeightConstant.fromTon.toOunce
+            } else if weight == .milligram {
+                constant = WeightConstant.fromTon.toMilligram
+            } else if weight == .microgram {
+                constant = WeightConstant.fromTon.toMicrogram
             } else {
                 constant = 1
             }
             break
         case .milligram:
-            if to == .grams {
-                constant = WeightConst.milligram.togram
-            } else if to == .kilogram {
-                constant = WeightConst.milligram.tokilogram
-            } else if to == .pound {
-                constant = WeightConst.milligram.topound
-            } else if to == .ounce {
-                constant = WeightConst.milligram.toounce
-            } else if to == .ton {
-                constant = WeightConst.milligram.toton
-            } else if to == .microgram {
-                constant = WeightConst.milligram.tomicrogram
+            if weight == .grams {
+                constant = WeightConstant.fromMilligram.toGram
+            } else if weight == .kilogram {
+                constant = WeightConstant.fromMilligram.toKilogram
+            } else if weight == .pound {
+                constant = WeightConstant.fromMilligram.toPound
+            } else if weight == .ounce {
+                constant = WeightConstant.fromMilligram.toOunce
+            } else if weight == .ton {
+                constant = WeightConstant.fromMilligram.toTon
+            } else if weight == .microgram {
+                constant = WeightConstant.fromMilligram.toMicrogram
             } else {
                 constant = 1
             }
         case .microgram:
-            if to == .grams {
-                constant = WeightConst.microgram.togram
-            } else if to == .kilogram {
-                constant = WeightConst.microgram.tokilogram
-            } else if to == .pound {
-                constant = WeightConst.microgram.topound
-            } else if to == .ounce {
-                constant = WeightConst.microgram.toounce
-            } else if to == .ton {
-                constant = WeightConst.microgram.toton
-            } else if to == .milligram {
-                constant = WeightConst.microgram.tomilligram
+            if weight == .grams {
+                constant = WeightConstant.fromMicrogram.toGram
+            } else if weight == .kilogram {
+                constant = WeightConstant.fromMicrogram.toKilogram
+            } else if weight == .pound {
+                constant = WeightConstant.fromMicrogram.toPound
+            } else if weight == .ounce {
+                constant = WeightConstant.fromMicrogram.toOunce
+            } else if weight == .ton {
+                constant = WeightConstant.fromMicrogram.toTon
+            } else if weight == .milligram {
+                constant = WeightConstant.fromMicrogram.toMilligram
             } else {
                 constant = 1
             }
         }
-        return val * constant
-    }
- 
-    static func fromString(_ string: String) -> Weight? {
-        if string == "grams" {
-            return .grams
-        } else if string == "kilogram" {
-            return .kilogram
-        } else if string == "pound" {
-            return .pound
-        } else if string == "ounce" {
-            return .ounce
-        } else if string == "ton" {
-            return .ton
-        } else if string == "milligram" {
-            return .milligram
-        } else if string == "microgram" {
-            return .microgram
-        } else {
-            return nil
-        }
-    }
-    
-    func stringValue() -> String {
-        switch self {
-        case .grams:
-            return "grams"
-        case .kilogram:
-            return "kilogram"
-        case .pound:
-            return "pound"
-        case .ounce:
-            return "ounce"
-        case .ton:
-            return "ton"
-        case .milligram:
-            return "milligram"
-        case .microgram:
-            return "microgram"
-        }
-    }
-    
-    static func toList() -> [String] {
-        var i = 0
-        var list = [String]()
-        while let weight = Weight(rawValue: i) {
-            list.append(weight.stringValue())
-            i = i + 1
-        }
-        return list
+        return value * constant
     }
 }

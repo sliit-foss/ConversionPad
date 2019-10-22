@@ -15,7 +15,8 @@ class SpeedViewController: UIViewController {
     @IBOutlet weak var lblSpeedOutput: UILabel!
     @IBOutlet weak var speedPicker: UIPickerView!
     
-    let speeds = Speed.toList()
+    // CaseIterable advantage
+    let speeds = Speed.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +33,18 @@ class SpeedViewController: UIViewController {
     func convertSpeeds() {
         let fromUnitIdx = speedPicker.selectedRow(inComponent: 0)
         let toUnitIdx = speedPicker.selectedRow(inComponent: 1)
+        let fromUnit = speeds[fromUnitIdx]
+        let toUnit = speeds[(speeds.endIndex-1) - Int(toUnitIdx)]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
+
         
-        let fromUnit = Speed.fromString(speeds[fromUnitIdx])!
-        let toUnit = Speed.fromString(speeds[(speeds.count-1) - Int(toUnitIdx)])!
-        lblSpeedInputUnit.text = " ".appending(fromUnit.stringValue().capitalized).appending("")
+        lblSpeedInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
         if let inputText = lblSpeedInput.text {
             if !inputText.isEmpty && (Double(inputText) != nil) {
-                let inputNum = Double(inputText)
-                let outputNum = fromUnit.convertTo(speed: toUnit, value: inputNum!)
-                lblSpeedOutput.text = String(outputNum).appending(" ").appending(toUnit.stringValue().capitalized)
+                let inputNum = Double(inputText) ?? 0.0
+                let outputNum = fromUnit.convert(inputNum, to: toUnit)
+                lblSpeedOutput.text = String(outputNum).appending(" ").appending(toUnit.title.capitalized)
             
             } else {
                 lblSpeedOutput.text = " ".appending("...")
@@ -61,7 +64,7 @@ extension SpeedViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return speeds[row]
+        return speeds[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -70,12 +73,12 @@ extension SpeedViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
+        
         switch component {
         case 0:
-            pickerLabel.text = speeds[row]
-            break
+            pickerLabel.text = speeds[row].title
         case 1:
-            pickerLabel.text = speeds[(speeds.count-1)-row]
+            pickerLabel.text = speeds[(speeds.endIndex-1) - row].title
         default:
             pickerLabel.text = ""
         }
