@@ -15,6 +15,7 @@ class SpeedViewController: UIViewController {
     @IBOutlet weak var lblSpeedOutput: UILabel!
     @IBOutlet weak var speedPicker: UIPickerView!
     
+    // CaseIterable advantage
     let speeds = Speed.allCases
     
     override func viewDidLoad() {
@@ -34,6 +35,8 @@ class SpeedViewController: UIViewController {
         let toUnitIdx = speedPicker.selectedRow(inComponent: 1)
         let fromUnit = speeds[fromUnitIdx]
         let toUnit = speeds[(speeds.endIndex-1) - Int(toUnitIdx)]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
+
         
         lblSpeedInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         

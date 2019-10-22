@@ -15,6 +15,7 @@ class DistanceViewController: UIViewController {
     @IBOutlet weak var lblInputValue: DecimalFormattedTextField!
     @IBOutlet weak var distancePicker: UIPickerView!
     
+    // CaseIterable advantage
     let distances = Distance.allCases
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class DistanceViewController: UIViewController {
         let fromUnitIdx = distancePicker.selectedRow(inComponent: 0)
         let toUnitIdx = distancePicker.selectedRow(inComponent: 1)
         let fromUnit = distances[fromUnitIdx]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
         let toUnit = distances[(distances.endIndex-1) - Int(toUnitIdx)]
 
         

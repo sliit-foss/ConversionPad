@@ -14,7 +14,7 @@ enum Distance: String, CaseIterable {
     var title: String {
         return self.rawValue
     }
-            
+    
     func convert(_ value: Double, to distance: Distance) -> Double {
         var constant = 1.0
         

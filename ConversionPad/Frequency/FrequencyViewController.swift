@@ -15,6 +15,7 @@ class FrequencyViewController: UIViewController {
     @IBOutlet weak var lblFrequencyOutput: UILabel!
     @IBOutlet weak var frequencyPicker: UIPickerView!
     
+    // CaseIterable advantage
     let frequencies = Frequency.allCases
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class FrequencyViewController: UIViewController {
         let toUnitIdx = frequencyPicker.selectedRow(inComponent: 1)
         let fromUnit = frequencies[fromUnitIdx]
         let toUnit = frequencies[(frequencies.endIndex - 1) - Int(toUnitIdx)]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
 
         lblFrequencyInputUnit.text = " ".appending((fromUnit.title as AnyObject).capitalized).appending("")
         

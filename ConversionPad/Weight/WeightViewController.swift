@@ -15,6 +15,7 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var lblWeightOutput: UILabel!
     @IBOutlet weak var weighPicker: UIPickerView!
     
+    // CaseIterable advantage
     let weights = Weight.allCases
     
     override func viewDidLoad() {
@@ -34,6 +35,8 @@ class WeightViewController: UIViewController {
         let toUnitIdx = weighPicker.selectedRow(inComponent: 1)
         let fromUnit = weights[fromUnitIdx]
         let toUnit = weights[(weights.endIndex-1) - Int(toUnitIdx)]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
+
         
         lblWeightInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         

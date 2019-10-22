@@ -15,6 +15,7 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var lblTemperatureOutput: UILabel!
     @IBOutlet weak var temperaturePicker: UIPickerView!
     
+    // CaseIterable advantage
     let temperatures = Temperature.allCases
     
     override func viewDidLoad() {
@@ -55,6 +56,8 @@ class TemperatureViewController: UIViewController {
         let toUnitIdx = temperaturePicker.selectedRow(inComponent: 1)
         let fromUnit = temperatures[fromUnitIdx]
         let toUnit = temperatures[(temperatures.endIndex-1) - Int(toUnitIdx)]
+        /* working with .endIndex instead .count since the enum distances handles conforms to both CaseIterable and Strings, and there's not stable behavior when working with those two.*/
+
         
         lblTemperatureInputUnit.text = " ".appending(fromUnit.title.capitalized).appending("")
         
