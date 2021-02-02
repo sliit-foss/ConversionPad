@@ -9,7 +9,7 @@
 import Foundation
 
 enum Distance: Int {
-    case inch = 0, centimeter, foot, meter, mile, yard, kilometer, millimeter, micrometer, nanometer
+    case inch = 0, centimeter, foot, meter, mile, yard, kilometer, millimeter, micrometer, nanometer, astronomicalUnit
     
     func convertTo(distance to: Distance, value val: Double) -> Double {
         var constant = 1.0
@@ -36,6 +36,8 @@ enum Distance: Int {
                 constant = 25400
             } else if to == .nanometer {
                 constant = 2.54e+7
+            } else if to == .astronomicalUnit {
+                constant = 1.697885e-13
             }
             break
             
@@ -59,6 +61,8 @@ enum Distance: Int {
                 constant = 10000
             } else if to == .nanometer {
                 constant = 1e+7
+            } else if to == .astronomicalUnit {
+                constant = 6.684587e-14
             }
             break
             
@@ -81,6 +85,8 @@ enum Distance: Int {
                 constant = 304800
             } else if to == .nanometer {
                 constant = 3.048e+8
+            } else if to == .astronomicalUnit {
+                constant = 2.037462e-12
             }
             
             break
@@ -103,6 +109,8 @@ enum Distance: Int {
                 constant = 1e+6
             } else if to == .nanometer {
                 constant = 1e+9
+            } else if to == .astronomicalUnit {
+                constant = 6.684587e-12
             }
             break
         case .mile:
@@ -125,6 +133,8 @@ enum Distance: Int {
                 constant = 1608999999.98412
             } else if to == .nanometer {
                 constant = 1608999999984.1196289
+            } else if to == .astronomicalUnit {
+                constant = 1.07578e-8
             }
             break
         case .yard:
@@ -146,6 +156,8 @@ enum Distance: Int {
                 constant = 914400
             } else if to == .nanometer {
                 constant = 9.144e+8
+            } else if to == .astronomicalUnit {
+                constant = 6.112386e-12
             }
             break
             
@@ -168,6 +180,8 @@ enum Distance: Int {
                 constant = 1e+9
             } else if to == .nanometer {
                 constant = 1e+12
+            } else if to == .astronomicalUnit {
+                constant = 6.684587e-9
             }
             break
             
@@ -190,6 +204,8 @@ enum Distance: Int {
                 constant = 1000
             } else if to == .nanometer {
                 constant = 1e+6
+            } else if to == .astronomicalUnit {
+                constant = 6.6846e-15
             }
             break
         case .micrometer:
@@ -211,6 +227,8 @@ enum Distance: Int {
                 constant = 0.001
             } else if to == .nanometer {
                 constant = 1000
+            } else if to == .astronomicalUnit {
+                constant = 6.6845871226706e-18
             }
             break
         case .nanometer:
@@ -232,6 +250,31 @@ enum Distance: Int {
                 constant = 1e-6
             } else if to == .micrometer {
                 constant = 0.001
+            } else if to == .astronomicalUnit {
+                constant = 6.6845871226706e-21
+            }
+            break
+        case .astronomicalUnit:
+            if to == .inch {
+                constant = 5.88968e12
+            } else if to == .centimeter {
+                constant = 1.495979e13
+            } else if to == .foot {
+                constant = 490806700000
+            } else if to == .meter {
+                constant = 149597900000
+            } else if to == .mile {
+                constant = 92955810
+            } else if to == .yard {
+                constant = 163602200000
+            } else if to == .kilometer {
+                constant = 149597900
+            } else if to == .millimeter {
+                constant = 1.49597870691e14
+            } else if to == .micrometer {
+                constant = 1.49597870691e17
+            } else if to == .nanometer {
+                constant = 1.49597870691e20
             }
             break
         }
@@ -260,6 +303,8 @@ enum Distance: Int {
             return .micrometer
         } else if string == "nanometer" {
             return .nanometer
+        } else if string == "astronomical unit" {
+            return .astronomicalUnit
         } else {
             return nil
         }
@@ -287,6 +332,8 @@ enum Distance: Int {
             return "micrometer"
         case .nanometer:
             return "nanometer"
+        case .astronomicalUnit:
+            return "astronomical unit"
         }
     }
     
